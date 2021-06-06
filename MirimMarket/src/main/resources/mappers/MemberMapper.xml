@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.hs.mirimmarket.dao.MemberMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
+  		
+  <insert id="insertMember">
+  	insert into member1(id, password, name)
+  	values (#{id}, #{password}, #{name})
+  </insert>
+  
+  <select id="readMember" resultType="kr.hs.mirimmarket.dto.MemberDTO">
+  	select * from
+  	where id=#{id}
+  </select>
+
+</mapper>

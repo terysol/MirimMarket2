@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.hs.mirimmarket.dao.ProductMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
+  		
+  <select id="getProductList" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from register2
+  </select>
+  
+  <select id="getProduct" parameterType="int" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from register2 where seq = #{seq}
+  </select>
+  
+  <update id="updateClick" parameterType="int">
+  	update register2 set click= click+1 where seq = #{seq}
+  </update>
+
+</mapper>
