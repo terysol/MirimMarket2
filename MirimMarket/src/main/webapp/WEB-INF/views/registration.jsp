@@ -17,12 +17,13 @@
 	            </div>
 	        </div>
 	    </div>
-	    <form action = "" method="post">
+	    <form action = "insert.do" method="post">
 	    <div class="box2">
 	        <table border="1" cellspacing="0" cellpadding="0">
 	            <tr height=70>
 	                <th width="200px" nowrap>글 제목</th>
 	                <td><input type=text name="title" style="width:300px;height:40px;font-size:20px;"></td>
+	                <input type="hidden" name="name" value="user1"/>
 	            </tr>
 	            <tr>
 	                <th>카테고리</th>

@@ -15,5 +15,13 @@
   <update id="updateClick" parameterType="int">
   	update register2 set click= click+1 where seq = #{seq}
   </update>
+  
+  <insert id="insertProduct">
+  	insert into register2(seq, userName, title, category,grade,state,image,
+  							explanation, price,  quantity, click, date) 
+		values((select ifnull(max(seq)+1,0) from register2 as seq), #{userName}, #{title} , 
+				#{category}, #{grade}, #{state}, #{image}, #{explanation}, #{price}, #{quantity},0, (select curdate() as date))
+  </insert>
+  
 
 </mapper>

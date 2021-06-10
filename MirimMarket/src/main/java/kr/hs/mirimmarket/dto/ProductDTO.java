@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class ProductDTO {
 	private int seq;
-	private String name;
+	private String userName;
 	private String title;
 	private String category;
 	private String grade;
 	private String state;
 	private String image;
-	private String explaination;
+	private String explanation;
 	private String price;
 	private String quantity;
 	private String isAnony;
@@ -23,11 +23,12 @@ public class ProductDTO {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public String getName() {
-		return name;
+	
+	public String getUserName() {
+		return userName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getTitle() {
 		return title;
@@ -59,11 +60,11 @@ public class ProductDTO {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getExplaination() {
-		return explaination;
+	public String getExplanation() {
+		return explanation;
 	}
-	public void setExplaination(String explaination) {
-		this.explaination = explaination;
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
 	}
 	public String getPrice() {
 		return price;

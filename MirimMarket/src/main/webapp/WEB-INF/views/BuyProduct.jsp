@@ -39,17 +39,17 @@
                     상태 ${product.state }
         </div>
         <br>
-        <div class="button"><a href=Button.html >채팅걸기</a></div>
+        <div class="button"><a href="" >채팅걸기</a></div>
     </div>
    
     <table>
     	<tr>
     		<td> <img src="image/leaf.PNG" style="width:50xpx; height:50px"></td>
-    		<td>${product.name }</td>
+    		<td>${product.userName }</td>
     	</tr>
     	<tr>
     		<td></td>
-    		<td>${product.explaination }</td>
+    		<td>${product.explanation }</td>
     	</tr>
     </table>
 	</body>

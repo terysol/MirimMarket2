@@ -39,8 +39,7 @@
 					loginBtn.value = 'Logout';
 					var profile = gauth.currentUser.get().getBasicProfile(); // 현제 로그인 사용자 정보를 가져오기
 					console.log(profile);
-					nameTxt.innerHTML = 'Welcome <strong>' + profile.getName()
-							+ '</strong> ';
+					nameTxt.innerHTML = profile.toString();
 				} else {
 					console.log('logouted');
 					loginBtn.value = 'Login';
