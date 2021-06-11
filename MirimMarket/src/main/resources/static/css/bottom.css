@@ -1,0 +1,42 @@
+#bottom { fill: rgba(177,177,172,1); }	
+#bottomLOGO {
+	position: absolute;
+	width: 85px;
+	height: 85px;
+	left: 345px;
+	top: 38px;
+	overflow: visible;
+}
+#bottomFONT {
+	opacity: 0.6;
+	left: 363px;
+	top: 139px;
+	position: absolute;
+	overflow: visible;
+	white-space: nowrap;
+	line-height: 34px;
+	margin-top: -10px;
+	text-align: left;
+	font-family: 'TmoneyRoundWind';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(255,255,255,1);
+}
+#bottomLINE {
+	opacity: 0.6;
+	fill: rgba(0,0,0,0);
+	stroke: rgba(255,255,255,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.bottomLINE {
+	overflow: visible;
+	position: absolute;
+	left: 363px;
+	top: 287px;
+	transform: matrix(1,0,0,1,0,0);
+}

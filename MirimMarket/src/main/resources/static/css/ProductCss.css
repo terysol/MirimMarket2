@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+body{
+    width: 800px;
+    margin: auto; /* 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    padding: 20px;
+}
+.box1{
+    height: 50px;
+    position: relative;
+}
+.box1 h1{
+    display: inline;
+    font-size: 26px;
+}
+.box1 h2{
+    display: inline;
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    float: right;
+}
+.box2{
+    padding:20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    width: 440px;
+    height: 400px;
+    float: left;
+}
+.box3{
+    width: 280px;
+    height: 400px;
+    padding: 20px;
+    float: left;
+    position: relative;
+}
+.info {
+    width: 270px;
+    height: 240px;
+    font-size: 26px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgb(226, 226, 226);
+    position: absolute;
+    top:30px;
+}
+.button{
+    border:0px;
+    margin:0px;
+    padding:0px;
+    font-size:36px;
+    width:280px;
+    font-weight:bold;
+    text-align: center;
+    position: absolute;
+    bottom: 40px;
+}
+
+.button a{
+    border-radius: 20px;
+    display:block;
+    line-height:100px;
+    height: 100px;
+    background-color:rgb(134, 238, 124);
+    text-align:center;
+    cursor: pointer;
+    color:rgb(0, 0, 0);
+    text-decoration:none;
+}
+.button a:hover{
+    border:1px rgb(85, 85, 85) solid;;
+    background-color:rgb(85, 85, 85);
+    color:rgb(255, 255, 255)
+}
+
+
+.box2 *{margin:0;padding:0;margin: auto;}
+ul,li{list-style:none;}
+#slide{width:360px;height:360px;position:relative;overflow:hidden;border: gray solid;}
+#slide ul{width:400%;height:100%;transition:1s;}
+#slide ul:after{content:"";display:block;clear:both;}
+#slide li{float:left;width:25%;height:100%;}
+#slide li:nth-child(1){background:white;}
+#slide li:nth-child(2){background:white;}
+#slide li:nth-child(3){background:white;}
+#slide input{display:none;}
+#slide label{display:inline-block;vertical-align:middle;width:10px;height:10px;border:2px solid #666;background:#fff;transition:0.3s;border-radius:50%;cursor:pointer;}
+#slide .pos{text-align:center;position:absolute;bottom:10px;left:0;width:100%;text-align:center;}
+#pos1:checked~ul{margin-left:0%;}
+#pos2:checked~ul{margin-left:-100%;}
+#pos3:checked~ul{margin-left:-200%;}
+#pos1:checked~.pos>label:nth-child(1){background:#666;}
+#pos2:checked~.pos>label:nth-child(2){background:#666;}
+#pos3:checked~.pos>label:nth-child(3){background:#666;}
