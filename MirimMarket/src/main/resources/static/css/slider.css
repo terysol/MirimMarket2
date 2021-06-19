@@ -3,15 +3,14 @@
 ul, li {list-style:none;}
 
 
-.slidebox {max-width:1300px;margin: auto;position:absolute; height: 395px;
-    top: 878px; left:310px;} 
-.slidebox .slidelist {position:relative;margin: auto 20px;white-space:nowrap;font-size:0;overflow:hidden; text-align:center;}
-.slidebox .slidelist .slideitem {position:relative; display:inline-block;vertical-align:top;width:100%;transition:all 1s;}
-.slidebox .slidelist .slideitem > a {display:block;width:auto;  position:relative; left: 16px;}
+.slidebox {max-width:1300px; margin: auto; position:absolute; height: 395px; top: 878px; left:310px;} 
+.slidelist {position:relative;margin: auto 20px;white-space:nowrap;font-size:0;overflow:hidden; text-align:center;}
+.slidelist .slideitem {position:relative; display:inline-block;vertical-align:top;width:100%;transition:all 1s;}
+.slidelist .slideitem > a {display:block;width:auto;  position:relative; left: 16px;}
 
-.slidebox .slide-control [class*="control"] label {position:absolute;top:50%;transform:translateY(-50%);padding:70px;cursor:pointer;}
-.slidebox .slide-control [class*="control"] label.prev {left:-120px;background: url('../img/left-arrow.png') center center / 50% no-repeat;}
-.slidebox .slide-control [class*="control"] label.next {right:-120px;background: url('../img/right-arrow.png') center center / 50% no-repeat;}
+.slide-control [class*="control"] label {position:absolute;top:25%;padding:70px;cursor:pointer;}
+.slide-control [class*="control"] label.prev {left:-120px;background: url('../img/left-arrow.png') center center / 50% no-repeat;}
+.slide-control [class*="control"] label.next {right:-120px;background: url('../img/right-arrow.png') center center / 50% no-repeat;}
 
 [name="slide"] {display:none;}
 #slide01:checked ~ .slidelist .slideitem {left:0;}

@@ -34,6 +34,15 @@ public class GetProductController {
 		return model;
    }
 	
+	@RequestMapping("/main_2")
+	public ModelAndView main_2() {
+		ModelAndView model =new ModelAndView();
+		List<ProductDTO> productlist=service.getProductList();
+		model.addObject("productlist",productlist);
+		model.setViewName("main_2");
+		return model;
+   }
+	
 	@GetMapping(value="/BuyProduct")
 	public ModelAndView buyProduct(@RequestParam("seq") String seq1) {	
 		ModelAndView model = new ModelAndView();
