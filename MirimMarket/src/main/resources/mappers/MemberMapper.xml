@@ -2,16 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.hs.mirimmarket.dao.MemberMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
+<mapper namespace="kr.hs.mirimmarket.dao.user.MemberMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
   		
   <insert id="insertMember">
-  	insert into member1(id, password, name)
-  	values (#{id}, #{password}, #{name})
+  	insert into user1(userId, name, email,imageUrl)
+  	values (#{userId}, #{name}, #{email}, #{imageUrl})
   </insert>
   
-  <select id="readMember" resultType="kr.hs.mirimmarket.dto.MemberDTO">
+	<select id="readMember" parameterType="String" resultType="kr.hs.mirimmarket.dto.MemberDTO">
   	select * from
-  	where id=#{id}
+  	where userId=#{userId}
   </select>
-
+	
+	<select id="findName" resultType="kr.hs.mirimmarket.dto.MemberDTO">
+	  	select userId from user1
+  </select>
+	
 </mapper>
