@@ -29,9 +29,9 @@ public class MemberDAO {
 		return member;
 	}
 	
-	public List<MemberDTO> findName(String userId) {
+	public int idCheck(String userId) {
 		userMapper=sqlSession.getMapper(MemberMapper.class);
-		List<MemberDTO> name=userMapper.findName(userId);
-		return name;
+		int count=userMapper.idCheck(userId);
+		return count;
 	}
 }

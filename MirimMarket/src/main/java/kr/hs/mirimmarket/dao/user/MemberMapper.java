@@ -13,5 +13,5 @@ public interface MemberMapper {
 	
 	public MemberDTO readMember(String userId);
 	
-	public List<MemberDTO> findName(String userId);
+	public int idCheck(String userId);
 }

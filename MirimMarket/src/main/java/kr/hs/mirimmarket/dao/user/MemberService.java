@@ -21,7 +21,7 @@ public class MemberService {
 		return userdao.readMember(userId);
 	}
 	
-	public List<MemberDTO> findName(String userId) {
-		return userdao.findName(userId);
+	public int idCheck(String userId) {
+		return userdao.idCheck(userId);
 	}
 }
