@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.hs.mirimmarket.dao.ProductService;
+import kr.hs.mirimmarket.dao.user.MemberMapper;
 import kr.hs.mirimmarket.dto.ProductDTO;
 
 @RestController
 @MapperScan(basePackages ="kr.hs.mirimmarket.dao")
 public class IndexController {
+	
+	@Autowired
+	private ProductService service;
 	
 	@RequestMapping("/")
 	public ModelAndView root() {
@@ -67,12 +73,16 @@ public class IndexController {
 		return model;
    }
 	
-	@RequestMapping("/mypage")
-	public ModelAndView mypage() {
+	@RequestMapping("/insert.do")
+	public ModelAndView insert(ProductDTO dto, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String userId= (String) session.getAttribute("userId");
+		dto.setUserID(userId);
+		service.insertProduct(dto);
 		ModelAndView model =new ModelAndView();
-		model.setViewName("mypage");
+		model.setViewName("redirect:/main");
 		return model;
-   }
+	}
 	
 	//@Autowired
 	//private BoardService s;

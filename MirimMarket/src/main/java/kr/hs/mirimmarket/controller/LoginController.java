@@ -10,12 +10,16 @@ import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,7 +36,9 @@ public class LoginController {
 	
 	@PostMapping(value="/login.do", produces="application/x-www-form-urlencoded")
 	@ResponseBody
-	public ModelAndView login(@RequestBody String param) throws FileNotFoundException, IOException, GeneralSecurityException {
+	public ModelAndView login(@RequestBody String param,HttpServletRequest request) throws FileNotFoundException, IOException, GeneralSecurityException {
+		HttpSession session = request.getSession();
+		
 		String userId = "";
 		try {
 			String idToken = param.split("=")[2];
@@ -49,7 +55,7 @@ public class LoginController {
 			JSONParser jsonParser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) jsonParser.parse(in);
 			userId = jsonObj.get("sub").toString();
-			String name = jsonObj.get("name").toString();
+			String name = jsonObj.get("given_name").toString();
 			String email = jsonObj.get("email").toString();
 			String imageUrl = jsonObj.get("picture").toString();
 			
@@ -57,9 +63,11 @@ public class LoginController {
 			
 			if(temp == 0) {    // 중복 아이디가 존재x
 				MemberDTO dto = new MemberDTO();
-				dto.setUserId(userId);  dto.setName(name);  dto.setEmail(email);  dto.setImageUrl(imageUrl);
+				dto.setUserID(userId);  dto.setName(name);  dto.setEmail(email);  dto.setImageUrl(imageUrl);
 				service.insertMember(dto);
 			}
+			
+			session.setAttribute("userId", userId);
 		}catch(Exception e) {
 			System.out.println(e);
 		}
@@ -68,4 +76,21 @@ public class LoginController {
 		mav.setViewName("redirect:/main_2");
 		return mav;
 	}
+	
+	@RequestMapping("/mypage")
+	public ModelAndView mypage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		ModelAndView model =new ModelAndView();
+		String userId= (String) session.getAttribute("userId");
+		
+		if(userId== null) {
+			// session.setAttribute("message", "로그인 해주세요.");
+		}else {
+			MemberDTO member= service.readMember(userId);
+			model.addObject("memberInfo",member);
+			model.setViewName("mypage");
+
+		}
+		return model;
+   }
 }

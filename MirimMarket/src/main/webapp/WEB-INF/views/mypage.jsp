@@ -99,20 +99,21 @@
 
 		<!-- 사용자 정보 -->
 		<div class="information">
+			<div class="point">포인트:&nbsp;&nbsp;${memberInfo.point }p</div>
 			<!-- 사용자 사진 -->
 			<label for="input_file">
-				<img src="static/img/userIMG.png" id="userIMG">
+				<img src="${ memberInfo.imageUrl}" id="userIMG">
 			</label>
 			<input type="file" id="input_file" style="display: none;" accept="image/*" onchange="addIMG(event);"/>
 			
 			<!-- 사용자 이름-->
-			<input type="text" spellcheck="false" value="오정민" />
+			<input type="text" spellcheck="false" value="${memberInfo.name }" />
 			<span class="informationFONT1">님</span>
 			<hr>
 
 			<!-- 사용자 소개글 -->
 			<span class="informationFONT2">소개글</span>
-			<textarea rows="4" cols="12" spellcheck="false">나의 인생은&#10;언제나 빛날거야</textarea>
+			<textarea rows="4" cols="12" spellcheck="false">${memberInfo.introduction }</textarea>
 		</div>
 
 		<!-- 등록글 -->
