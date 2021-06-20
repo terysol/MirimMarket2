@@ -53,14 +53,9 @@ public class LoginController {
 			String email = jsonObj.get("email").toString();
 			String imageUrl = jsonObj.get("picture").toString();
 			
-			List<MemberDTO> temp = service.findName(userId);
-			boolean count=true;
-			for(MemberDTO t:temp) {
-				if(t.equals(userId)) {
-					count=false;
-				}
-			}
-			if(count) {
+			int temp = service.idCheck(userId);
+			
+			if(temp == 0) {    // 중복 아이디가 존재x
 				MemberDTO dto = new MemberDTO();
 				dto.setUserId(userId);  dto.setName(name);  dto.setEmail(email);  dto.setImageUrl(imageUrl);
 				service.insertMember(dto);
@@ -70,7 +65,7 @@ public class LoginController {
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main_2");
+		mav.setViewName("redirect:/main_2");
 		return mav;
 	}
 }
