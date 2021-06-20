@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'TmoneyRoundWind';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.information{
+    position: absolute;
+    left: 363px;
+    top: 202px;
+    height: 380px;
+    width: 380px;
+    border-radius: 35px;
+    background-color: rgba(102,140,74,1);
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.161));
+}
+.information img{
+    cursor: pointer;
+    position: absolute;
+    left: 59px;
+    top: 34px;
+    width: 80px;
+    height: 80px;
+    border-radius: 70px;
+}
+.information input[type="text"]{
+    position: absolute;
+    left: 158px;
+    top: 47px;
+    width: 156px;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'TmoneyRoundWind';
+    font-size: 40px;
+    color: rgba(255,255,255,1);
+}
+.informationFONT1{
+    position: absolute;
+    top: 68px;
+    left: 320px;
+    font-family: 'TmoneyRoundWind';
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+.information hr{
+    position: absolute;
+    top: 140px;
+    left: 48px;
+    width: 280px;
+    border: 1px solid rgb(255, 255, 255);
+}
+.informationFONT2{
+    position: absolute;
+    top: 150px;
+    left: 155px;
+    font-family: 'TmoneyRoundWind';
+    font-size: 22px;
+    color: rgba(255,255,255,0.7);
+}
+.information textarea{
+    position: absolute;
+    left: 50px;
+    top: 190px;
+    width: 278px;
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'TmoneyRoundWind';
+    font-size: 24px;
+    color: rgba(255,255,255,1);
+}
+
+.viewRegister, .viewInterest{
+    position: absolute;
+    height: 380px;
+    border-radius: 35px;
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.161));
+}
+.viewRegister{
+    left: 770px;
+    top: 202px;
+    width: 790px;
+    background-color: rgba(242,197,61,1);
+}
+.viewRegisterFONT{
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    font-family: 'TmoneyRoundWind';
+    font-size: 36px;
+    color: rgba(255,255,255,1);
+}
+.viewInterest{
+    left: 363px;
+    top: 610px;
+    width: 1198px;
+    background-color: rgba(242,240,213,1);;
+}
+
+.productSliderSEC{
+    position: absolute;
+    top: 90px;
+    left: 30px;
+    height: 250px;
+    width: 870px;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+#productSEC{
+    cursor: pointer;
+    float: left;
+    width: 247px;
+    height: 247px;
+    margin-right: 27px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.161));
+}
+#productSEC:hover{
+    width: 230px;
+    height: 275px;
+    border-radius: 30px 0px 0px 30px;
+}
+#productSEC:hover img{ width: 180px; }
+#productSEC:hover #productPRICE{ display: none; }
+#productSEC img{
+    position: absolute;
+    top: 26px;
+    left: 22px;
+    width: 202px;
+    height: 170px;
+}
+#productTITLE, #productPRICE{
+    position: absolute;
+    top: 210px;
+    left: 22px;
+    width: 202px;
+    font-family: 'TmoneyRoundWind';
+    font-size: 14px;
+}
+.productNEXT {
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 90px;
+    width: 30px;
+}
+
+.blank{
+    position: absolute;
+    width: 500px;
+    height: 90px;
+    top: 1000px;
+}
+
+@keyframes fade {
+    from {opacity: 0.9} 
+    to {opacity: 1}
+}

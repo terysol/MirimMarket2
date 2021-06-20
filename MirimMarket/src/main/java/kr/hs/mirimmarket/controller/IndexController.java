@@ -59,6 +59,13 @@ public class IndexController {
 		return model;
    }
 	
+	@RequestMapping("/mypage")
+	public ModelAndView mypage() {
+		ModelAndView model =new ModelAndView();
+		model.setViewName("mypage");
+		return model;
+   }
+	
 	//@Autowired
 	//private BoardService s;
 	/*@RequestMapping(value="/", method=RequestMethod.GET)
