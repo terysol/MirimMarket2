@@ -24,6 +24,14 @@ import kr.hs.mirimmarket.dto.ProductDTO;
 @MapperScan(basePackages ="kr.hs.mirimmarket.dao")
 public class IndexController {
 	
+	@RequestMapping("/")
+	public ModelAndView root() {
+		ModelAndView model =new ModelAndView();
+		model.setViewName("main");
+		return model;
+   }
+
+	
 	@RequestMapping("/index")
 	public ModelAndView index() {
 		ModelAndView model =new ModelAndView();

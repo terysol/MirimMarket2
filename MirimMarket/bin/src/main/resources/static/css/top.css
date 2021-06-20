@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+#topMENU1{
+	position: fixed;
+	background: rgb(255,255,255);    
+	filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.051));
+	width: 1920px;
+	height: 120px;
+
+	font-family: 'Quicksand', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 26px;
+	color: rgba(0,0,0,1);
+	z-index: 100;
+}
+#topMENU1 a{text-decoration: none;}
+#topMENU1>ul a{	color: #404040; }
+#topMENU1 li{ list-style: none; }
+#topMENU1>ul{
+	position: absolute;
+	left: 520px;
+	top: 40px;
+	width: 760px;
+}
+#topMENU1>ul li{
+	width: auto;
+	text-align: center;
+	margin-left: 60px;
+	float: left;
+}
+#topLOGO {
+	position: absolute;
+	width: 52.273px;
+	height: 40px;
+	left: 140px;
+	top: 35px;
+	overflow: visible;
+}
+#topMY {
+	fill: transparent;
+	stroke: rgba(26,24,24,1);
+	stroke-width: 2px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.topMY {
+	cursor: pointer;
+	overflow: visible;
+	position: absolute;
+	width: 32px;
+	height: 34px;
+	left: 1636px;
+	top: 40px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#topADD {
+	cursor: pointer;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 1691px;
+	top: 40px;
+	overflow: visible;
+}
+#topADDattri {
+	fill: transparent;
+	stroke: rgba(0,0,0,1); 
+	stroke-width: 2px;
+	stroke-linejoin: miter;
+	stroke-linecap: round;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.topADD_ {
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	height: 32px;
+	left: 0px;
+	top: 0px;
+}
+.topADD__ {
+	overflow: visible;
+	position: absolute;
+	width: 2px;
+	height: 17px;
+	left: 16px;
+	top: 8.5px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.topADD___ {
+	overflow: visible;
+	position: absolute;
+	width: 1px;
+	height: 15px;
+	transform: translate(-1592px, -87px) matrix(1,0,0,1,1608,95.5) rotate(90deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#topCHAT {
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 2px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.topCHAT {
+	cursor: pointer;
+	overflow: visible;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 1748.001px;
+	top: 40px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.topMENU2{
+	background: rgba(255,255,255,0.9);
+	filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.051));
+	height: 360px;
+	width: 1920px;
+	position: absolute;
+	top: 120px;
+	display: none;
+
+	font-family: 'TmoneyRoundWind';
+}
+.topMENU2 ul{
+	width: 150px;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+.topMENU2 ul li{
+	text-align: center;
+	margin-top: 40px;
+}
+.topMENU2 a{ color: #000000; }
+#topMENU1:hover .topMENU2{ display: block; }
+.topMENU2:hover{ display: block; }
+.topMENU2 ul:hover{ background: rgba(242, 195, 61, 0.8); }
+#topMENU2photo {
+	cursor: pointer;
+	position: absolute;
+	width: 418px;
+	height: 300px;		
+	left: 149px;
+	top: 9px;
+	overflow: visible;
+}
+#topMENU2photo_ { fill: rgba(242,240,213,1); }
+.topMENU2photo_ {
+	position: absolute;
+	overflow: visible;
+	width: 418px;
+	height: 300px;
+	left: 0px;
+	top: 0px;
+}
+#topMENU2photo__ {
+	position: absolute;
+	left: 12px;
+	top: 93px;
+	overflow: visible;
+}
+#topMENU2photoFONT1 {
+	left: 9px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	white-space: nowrap;
+	text-align: right;
+	font-family: 'TmoneyRoundWind';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	color: rgba(242,197,61,1);
+}
+#topMENU2photoFONT2 {
+	filter: drop-shadow(2px 3px 0px rgba(242, 197, 61, 1));
+	left: 0px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	white-space: nowrap;
+	text-align: right;
+	font-family: 'TmoneyRoundWind';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 46px;
+	color: rgba(102,140,74,1);
+}
+#topMENU2photoFONT3 {
+	left: 21px;
+	top: 82px;
+	position: absolute;
+	overflow: visible;
+	white-space: nowrap;
+	text-align: left;
+	font-family: 'TmoneyRoundWind';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(177,177,172,1);
+}

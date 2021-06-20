@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'TmoneyRoundWind';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+#titleFONT1 {
+    left: 465px;
+    top: 197px;
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    color: rgba(69,69,69,1);
+}
+#titleFONT2 {
+    opacity: 0.5;
+    left: 688px;
+    top: 229px;
+    position: absolute;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 30px;
+    margin-top: -2px;
+    text-align: left;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(69,69,69,1);
+}
+
+.regisSECTION {
+    position: absolute;
+    overflow: visible;
+    left: 465px;
+    top: 305px;
+    width: 1092px;
+    height: 1440px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+
+    white-space: nowrap;
+    text-align: left;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+}
+#regisFONT1 {
+    opacity: 0.5;
+    left: 102px;
+    top: 58px;
+    position: absolute;
+    overflow: visible;
+    font-size: 30px;
+    color: rgba(69,69,69,1);
+}
+#regisFONT2 {
+    left: 220px;
+    top: 68px;
+    position: absolute;
+    overflow: visible;
+    font-size: 30px;
+    color: rgba(102,140,74,1);
+}
+#regisFONT3{
+    position: absolute;
+    left: 250px;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+#categorySECTION {
+    position: absolute;
+    left: 102px;
+    top: 119px;
+    border: 2px solid rgb(102,140,74);
+    border-radius: 10px;
+    z-index: 1;
+}
+.selectBOX{
+    cursor: pointer;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: rgba(0,0,0,1);
+    width: 206px;
+    height: 50px;
+    background: rgba(255,255,255,0);
+}
+select{
+    border: 0;
+    appearance: none;
+    outline: 0;
+}
+.selectBOX option{ font-size: 20px; }
+.selectARROW {
+    fill: rgba(102,140,74,1);
+    position: absolute;
+    left: 160px;
+    top: 15px;
+    width: 24px;
+    height: 20px;
+    transform: rotate(180deg);
+    z-index: -1;
+}
+
+#regisINPUT{
+    position: absolute;
+    left: 102px;
+    top: 265px;
+    width: 170px;
+    height: 50px;
+    padding-right: 30px;
+    text-align: right;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    border: 0;
+    outline: 0;
+    background: rgba(255,255,255,0);
+    border-bottom: 2.5px solid rgba(102,140,74,1);
+}
+
+#regisIMGsec{
+    position: absolute;
+    top: 412px;
+    left: 100px;
+    width: 930px;
+}
+.inputIMG img, .input_img_label img{
+    width: 174px;
+    height: 174px;
+}
+.input_img_label{cursor: pointer;}
+.inputIMG{
+    position: absolute;
+    top: 0px;
+    left: 184px;
+}
+.inputIMG span{
+    position: relative; 
+    height: 174px; 
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.4); 
+    border-radius: 8px; 
+    margin-right: 10px;
+}
+span button {
+    cursor: pointer;
+    position: absolute;
+    height: auto;
+    width: auto;
+    right: 5px;
+    top: 3px;
+    border: none;
+    background: none;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 30px;
+    outline: none;
+    color: black;
+}
+
+#stateSECTION {
+    position: absolute;
+    left: 102px;
+    top: 980px;
+    border: 2px solid rgba(242,197,61,1);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+#regisTEXTAREA{
+    position: absolute;
+    left: 102px;
+    top: 1132px;
+    width: 890px;
+    height: 237px;
+    padding: 5px 30px;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    outline: 0;
+    resize: none;
+    overflow: hidden;
+    border: 2.5px solid rgba(242,197,61,1);
+    border-radius: 40px;
+}
+
+button{
+    cursor: pointer;
+    position: absolute;
+    width: 430px;
+    height: 105px;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    color: rgba(255,255,255,1);
+    border: 0;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    border-radius: 10px;
+}
+.buttonREGIS{
+    left: 70px;
+    top: 1520px;
+    background: rgba(242,197,61,1);
+}
+.buttonCANCLE{
+    right: 70px;
+    top: 1520px;
+    background: rgba(177,177,172,1);
+}
+
+.blank{
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    top: 2000px;
+    background: rgba(242,197,61,0);
+}

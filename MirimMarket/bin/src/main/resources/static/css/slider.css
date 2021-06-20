@@ -1,0 +1,25 @@
+/* 리셋 CSS */
+* {margin:0;padding:0;box-sizing:border-box;}
+ul, li {list-style:none;}
+
+
+.slidebox {max-width:1300px; margin: auto; position:absolute; height: 395px; top: 878px; left:310px;} 
+.slidelist {position:relative;margin: auto 20px;white-space:nowrap;font-size:0;overflow:hidden; text-align:center;}
+.slidelist .slideitem {position:relative; display:inline-block;vertical-align:top;width:100%;transition:all 1s;}
+.slidelist .slideitem > a {display:block;width:auto;  position:relative; left: 16px;}
+
+.slide-control [class*="control"] label {position:absolute;top:25%;padding:70px;cursor:pointer;}
+.slide-control [class*="control"] label.prev {left:-120px;background: url('../img/left-arrow.png') center center / 50% no-repeat;}
+.slide-control [class*="control"] label.next {right:-120px;background: url('../img/right-arrow.png') center center / 50% no-repeat;}
+
+[name="slide"] {display:none;}
+#slide01:checked ~ .slidelist .slideitem {left:0;}
+#slide02:checked ~ .slidelist .slideitem {left:-100%;}
+#slide03:checked ~ .slidelist .slideitem {left:-200%;}
+/*#slide04:checked ~ .slidelist .slideitem {left:-300%;}*/
+
+.slide-control [class*="control"] {display:none;}
+#slide01:checked ~ .slide-control .control01 {display:block;}
+#slide02:checked ~ .slide-control .control02 {display:block;}
+#slide03:checked ~ .slide-control .control03 {display:block;}
+/*#slide04:checked ~ .slide-control .control04 {display:block;}*/

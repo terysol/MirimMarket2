@@ -1,0 +1,74 @@
+#product{
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    width: 306px;
+    height: 344px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#productIMGpos {
+    position: relative;
+    width: 306px;
+    height: 260px;
+    overflow: hidden;
+}
+#productName {
+    position: relative;
+    margin-top: 7px;    
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 30px;
+    text-align: left;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(69,69,69,1);
+}
+#productPrice {
+    position: relative;
+    margin-top: 3px;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 21px;
+    text-align: left;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(69,69,69,1);
+}
+#productState {
+    position: relative;
+    margin-top: -5px;
+    margin-right: 90px;
+    overflow: visible;
+    white-space: nowrap;
+    line-height: 17px;
+    text-align: right;
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(69,69,69,1);
+}
+#productStateFill { fill: rgba(102,140,74,1); }
+.productStateFill {	
+	position: absolute;
+	overflow: visible;
+}
+#productStateNoneFill {
+	opacity: 0.2;
+	fill: transparent;
+	stroke: rgba(0,0,0,1);
+	stroke-width: 2px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.productStateNoneFill {
+	position: absolute;
+	overflow: visible;
+}

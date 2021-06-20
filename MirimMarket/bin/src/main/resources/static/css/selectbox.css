@@ -1,0 +1,35 @@
+.selectbox{		
+    cursor: pointer;
+    position: absolute;
+    left: 1464px;
+    top: 2240px;
+    width: 93px;
+    height: 33px;
+    padding: 0em .8em;	
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(255, 0, 0,0);
+
+    font-family: 'TmoneyRoundWind';
+    font-style: normal;
+    font-weight: normal;
+    color: rgb(69,69,69,1);
+    font-size: 16px;
+    border-radius: 53px;
+    border-color: rgba(177,177,172,1);
+    outline: 0;
+}
+#selectboxARROW {
+    opacity: 0.7;
+    fill: rgba(102,140,74,1);
+}
+.selectboxARROW {
+    overflow: visible;
+    position: absolute;
+    width: 17px;
+    height: 13px;
+    transform: translate(-1479px, -2204px) matrix(1,0,0,1,1529,2210) rotate(180deg);
+    transform-origin: center;
+    left: 1480px;
+    top:2245px;
+}
