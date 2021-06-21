@@ -13,6 +13,10 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="static/js/product.js"></script>
+<<<<<<< HEAD
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+=======
 		<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 		<script>
 			function checkLoginStatus() { // 로그인인지 아닌지 확인
@@ -83,6 +87,7 @@
 			  }
 		</script>
 		
+>>>>>>> branch 'main' of https://github.com/terysol/Mirim_Market2.git
 		<link href="static/css/top.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/slider.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/selectbox.css" rel="stylesheet" type="text/css" />
