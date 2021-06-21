@@ -12,7 +12,8 @@
 		<title>메인</title>
 
 		<script type="text/javascript" src="static/js/product.js"></script>
-		
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link href="static/css/top.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/slider.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/selectbox.css" rel="stylesheet" type="text/css" />
