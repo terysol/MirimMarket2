@@ -1,6 +1,7 @@
 package kr.hs.mirimmarket.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -18,12 +19,13 @@ public interface ProductMapper {
 	public List<ProductDTO> getProductList();
 	
 	// seq 기준으로 상품 목록 가져오기
-	public  ProductDTO getProduct(@Param("seq") int seq);
+	public  ProductDTO getProduct(@Param("productID") int productID);
 	
 	// 조회수 update
-	public void updateClick(int seq);
+	public void updateClick(int productID);
 	
 	// 상품등록
 	public void insertProduct(ProductDTO dto);
 
+	public void updateImage(@Param("image")Map<String, Object> hmap, @Param("productID") int productID);
 }

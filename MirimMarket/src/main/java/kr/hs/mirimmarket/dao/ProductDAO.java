@@ -1,6 +1,7 @@
 package kr.hs.mirimmarket.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -25,19 +26,24 @@ public class ProductDAO {
     	return productDAO;
     }
     
-    public ProductDTO getProduct(int seq) {
+    public ProductDTO getProduct(int productID) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
-    	ProductDTO product=productMapper.getProduct(seq);
+    	ProductDTO product=productMapper.getProduct(productID);
     	return product;
     	
     }
-    public void updateClick(int seq) {
+    public void updateClick(int productID) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
-    	productMapper.updateClick(seq);
+    	productMapper.updateClick(productID);
     }
     
     public void insertProduct(ProductDTO dto) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
     	productMapper.insertProduct(dto);
+    }
+    
+    public void updateImage(Map<String, Object> hamp,int productID) {
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	productMapper.updateImage(hamp,productID);
     }
 }

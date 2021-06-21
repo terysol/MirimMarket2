@@ -1,13 +1,17 @@
 package kr.hs.mirimmarket.dto;
 
 import java.util.Date;
+import java.util.Map;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class ProductDTO {
 	private int productID;
 	private String userID;
 	private String title;
 	private String category;
-	private String image;
+	private String gdsThumbImg;		// 썸네일 저장할 변수
+	private String gdsImg;			// 상품 등록 쿼리의 이미지
 	private int price;
 	private int amount;
 	private String state;
@@ -39,11 +43,18 @@ public class ProductDTO {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getImage() {
-		return image;
+	
+	public String getGdsThumbImg() {
+		return gdsThumbImg;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setGdsThumbImg(String gdsThumbImg) {
+		this.gdsThumbImg = gdsThumbImg;
+	}
+	public String getGdsImg() {
+		return gdsImg;
+	}
+	public void setGdsImg(String gdsImg) {
+		this.gdsImg = gdsImg;
 	}
 	public int getPrice() {
 		return price;

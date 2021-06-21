@@ -17,10 +17,12 @@
   </update>
   
   <insert id="insertProduct">
-  	insert into Product1(productID, userID, title, category,image,price,amount, state, explanation,click,date) 
+  	insert into Product1(productID, userID, title, category, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
 				values((select ifnull(max(productID)+1,0) from Product1 as seq), #{userID}, #{title} , 
-				#{category}, #{image}, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
+				#{category}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
   </insert>
-  
+  <update id="updateImage">
+  	update Product1 set image=#{image} where productID= #{productID}
+  </update>
 
 </mapper>
