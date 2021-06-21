@@ -1,16 +1,18 @@
 package kr.hs.mirimmarket.dto;
 
 public class MemberDTO  {
-	private String userId;
+	private String userID;
 	private String name;
 	private String email;
+	private String introduction;
+	private int point;
 	private String imageUrl;
 	
-	public String getUserId() {
-		return userId;
+	public String getUserID() {
+		return userID;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 	public String getName() {
 		return name;
@@ -24,10 +26,25 @@ public class MemberDTO  {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getIntroduction() {
+		return introduction;
+	}
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
+	}
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
 	public String getImageUrl() {
 		return imageUrl;
 	}
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	
+	
 }
+

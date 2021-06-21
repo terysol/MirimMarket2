@@ -119,13 +119,13 @@
 		</div>
 
 		<!-- 상품등록 FORM -->
-		<form class="regisSECTION">
+		<form action="insert.do" class="regisSECTION" method="post">
 			<!-- 카테고리 선택 -->
 			<div id="regisFONT1">카테고리</div>
 			<div id="regisFONT2">*</div>
 			<div id="categorySECTION">
-				<select class="selectBOX">
-					<optgroup label="CLOTHES">
+				<select class="selectBOX" name="category">
+					<optgroup label="CLOTHES" >
 						<option>교복</option>
 						<option>체육복</option>
 						<option>사복</option>
@@ -136,7 +136,7 @@
 						<option>일반도서</option>
 						<option>교과서</option>
 					</optgroup>
-					<optgroup label="OTHERS">
+					<optgroup label="OTHERS" name="category">
 						<option>학용품</option>
 						<option>학교굿즈</option>
 						<option>주변기기</option>
@@ -152,7 +152,7 @@
 			<!-- 제목 -->
 			<div id="regisFONT1" style="top: 205px;">글 제목</div>
 			<div id="regisFONT2" style="top: 215px; left: 200px;">*</div>
-			<input type="text" id="regisINPUT" style="width: 610px; text-align: left; padding: 0px;">
+			<input type="text" id="regisINPUT" name="title" style="width: 610px; text-align: left; padding: 0px;">
 
 			<!-- 상품 사진-->
 			<div id="regisFONT1" style="top: 352px;">상품 사진</div>
@@ -168,13 +168,13 @@
 			<!-- 가격 입력 -->
 			<div id="regisFONT1" style="top: 625px;">가격</div>
 			<div id="regisFONT2" style="top: 635px; left: 165px;">*</div>
-			<input type="text" id="regisINPUT" style="top: 685px;">
+			<input type="text" id="regisINPUT" name="price" style="top: 685px;">
 			<div id="regisFONT3" style="top: 693px;">원</div>
 
 			<!-- 수량 입력 -->
 			<div id="regisFONT1" style="top: 772px;">수량</div>
 			<div id="regisFONT2" style="top: 782px; left: 165px;">*</div>
-			<input type="text" id="regisINPUT" style="border-color: rgba(242,197,61,1); top: 832px;">
+			<input type="text" id="regisINPUT" name= "amount"style="border-color: rgba(242,197,61,1); top: 832px;">
 			<div id="regisFONT3" style="top: 840px;">개</div>
 			<div id="regisFONT1" style="font-size: 16px; top: 848px; left: 290px;">
 				<span>1~1000 사이의 숫자로 입력해 주세요.</span>
@@ -184,7 +184,7 @@
 			<div id="regisFONT1" style="top: 919px;">상태</div>
 			<div id="regisFONT2" style="top: 929px; left: 165px;">*</div>
 			<div id="stateSECTION">
-				<select class="selectBOX">
+				<select class="selectBOX" name="state">
 					<option>최상</option>
 					<option>상</option>
 					<option selected>중</option>
@@ -200,7 +200,7 @@
 			<!-- 상세설명 입력 -->
 			<div id="regisFONT1" style="top: 1066px;">상세 설명</div>
 			<div id="regisFONT2" style="top: 1076px; left: 228px;">*</div>
-			<textarea id="regisTEXTAREA" rows="4" cols="20"></textarea>
+			<textarea id="regisTEXTAREA" name="explanation" rows="4" cols="20"></textarea>
 
 			<!-- 버튼(등록 & 취소)-->
 			<button type="submit" class="buttonREGIS">등록하기</button>

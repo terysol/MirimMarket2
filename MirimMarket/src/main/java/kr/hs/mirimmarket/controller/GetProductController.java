@@ -72,18 +72,20 @@ public class GetProductController {
 		return model;
 	}
 	
-	@GetMapping("/Registration")
-	public ModelAndView registration() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("registration");
-		return model;	
-	}
+//	@GetMapping("/Registration")
+//	public ModelAndView registration() {
+//		ModelAndView model = new ModelAndView();
+//		model.setViewName("registration");
+//		return model;	
+//	}
 	
-	@RequestMapping("/insert.do")
-	public ModelAndView insertProduct(ProductDTO dto) {
-		service.insertProduct(dto);
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/main");
-		return mav;
-	}
+//	@RequestMapping("/insert.do")
+//	public ModelAndView insertProduct(ProductDTO dto) {
+//		service.insertProduct(dto);
+//		ModelAndView mav = new ModelAndView();
+//		mav.setViewName("redirect:/main");
+//		return mav;
+//	}
+	
+	
 }
