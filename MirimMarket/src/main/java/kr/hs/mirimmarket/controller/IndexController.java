@@ -11,6 +11,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.hs.mirimmarket.dao.ProductService;
 import kr.hs.mirimmarket.dao.user.MemberMapper;
+import kr.hs.mirimmarket.dto.CategoryDTO;
 import kr.hs.mirimmarket.dto.ProductDTO;
 
 @RestController
@@ -45,9 +47,13 @@ public class IndexController {
 		return model;
    }
 	
-	@RequestMapping("/category")
-	public ModelAndView category() {
+	@GetMapping("/category")
+	public ModelAndView category(@RequestParam("cate1") String cate1, @RequestParam(value="cate2", defaultValue = "") String cate2) {
 		ModelAndView model =new ModelAndView();
+		model.addObject("cate1", cate1);
+		model.addObject("cate2", cate2);
+		String cateName = (cate2.equals("")?cate1:cate1+" > " + cate2);
+		model.addObject("cateName", cateName);
 		model.setViewName("category");
 		return model;
    }
@@ -61,9 +67,9 @@ public class IndexController {
 	
 	@RequestMapping("/product")
 	public ModelAndView product() {
-		ModelAndView model =new ModelAndView();
-		model.setViewName("product");
-		return model;
+		ModelAndView view =new ModelAndView();
+		view.setViewName("product");
+		return view;
    }
 	
 	@RequestMapping("/registration")

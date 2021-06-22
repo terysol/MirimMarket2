@@ -231,21 +231,13 @@
 			<!-- [카테고리] 셀렉트 박스 -->
 			<!-- 링크 추가!! -->
 			<div id="categorySECTION">
-				<span>의류 ></span>
-				<select class="categoryBOX">
-					<option>교복</option>
-					<option>체육복</option>
-					<option>사복</option>
-					<option>액세서리</option>
-				</select>
+				<span>${cateName }</span>
 			</div>
 
 			<!-- [정렬순] 셀렉트 박스 -->
 			<select class="selectbox" style="top: 287px;">
 				<option selected>최신순</option>
 				<option>인기순</option>
-				<option>저가순</option>
-				<option>고가순</option>
 			</select>
 			<svg class="selectboxARROW" style="top: 292px;" viewBox="0 0 17 13">
 				<path id="selectboxARROW" d="M 7.663029670715332 1.280071258544922 C 8.057735443115234 0.6764036417007446 8.942263603210449 0.6764036417007446 9.336969375610352 1.280071139335632 L 15.98833656311035 11.45275020599365 C 16.4232120513916 12.11785411834717 15.94602394104004 13 15.1513671875 13 L 1.848632454872131 13 C 1.053975701332092 13.00000095367432 0.576787531375885 12.11785411834717 1.011662840843201 11.45275115966797 Z"></path>

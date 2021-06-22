@@ -13,10 +13,6 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="static/js/product.js"></script>
-<<<<<<< HEAD
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-=======
 		<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 		<script>
 			function checkLoginStatus() { // 로그인인지 아닌지 확인
@@ -87,7 +83,6 @@
 			  }
 		</script>
 		
->>>>>>> branch 'main' of https://github.com/terysol/Mirim_Market2.git
 		<link href="static/css/top.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/slider.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/selectbox.css" rel="stylesheet" type="text/css" />
@@ -288,10 +283,10 @@
 				<!-- 이거 링크 꼭!!!!!! 걸어주세요-->
 				<ul>
 					<li><a href="index">HOME</a></li>
-					<li><a href="category">CLOTHES</a></li>
-					<li><a href="category">BOOKS</a></li>
-					<li><a href="category">OTHERS</a></li>
-					<li><a href="category">WANT</a></li>
+					<li><a href="category?cate1=의류">CLOTHES</a></li>
+					<li><a href="category?cate1=도서">BOOKS</a></li>
+					<li><a href="category?cate1=기타">OTHERS</a></li>
+					<li><a href="category?cate1=요청">WANT</a></li>
 				</ul>
 				<!-- 사진 찾는데 한계가 있어, html으로 그린걸로 사용했습니다.
 					 원하는 아이콘 주시면 그걸로 바꿔서 다시 드리도록 하겠습니다.
@@ -355,23 +350,22 @@
 							</div>                        
 						</div>
 					</div>
-
 					<ul id="clothes" style="margin-left: 700px;">
-						<li><a href="category">교복</a></li>
-						<li><a href="category">체육복</a></li>
-						<li><a href="category">사복</a></li>
-						<li><a href="category">액세서리</a></li>
+						<li><a href="category?cate1=의류&cate2=교복">교복</a></li>
+						<li><a href="category?cate1=의류&cate2=체육복">체육복</a></li>
+						<li><a href="category?cate1=의류&cate2=사복">사복</a></li>
+						<li><a href="category?cate1=의류&cate2=액세서리">액세서리</a></li>
 					</ul>
 					<ul id="books" style="margin-left: 10px;">
-						<li><a href="category">전공도서</a></li>
-						<li><a href="category">일반도서</a></li>
-						<li><a href="category">교과서</a></li>
+						<li><a href="category?cate1=도서&cate2=전공도서">전공도서</a></li>
+						<li><a href="category?cate1=도서&cate2=일반도서">일반도서</a></li>
+						<li><a href="category?cate1=도서&cate2=교과서">교과서</a></li>
 					</ul>
 					<ul id="others" style="margin-left: 5px;">
-						<li><a href="category">학용품</a></li>
-						<li><a href="category">학교굿즈</a></li>
-						<li><a href="category">주변기기</a></li>
-						<li><a href="category">기타 상품</a></li>
+						<li><a href="category?cate1=기타&cate2=교복">학용품</a></li>
+						<li><a href="category?cate1=기타&cate2=학교굿즈">학교굿즈</a></li>
+						<li><a href="category?cate1=기타&cate2=주변기기">주변기기</a></li>
+						<li><a href="category?cate1=기타&cate2=기타 상품">기타 상품</a></li>
 					</ul>
 					<ul id="user" style="width: 190px; margin-left: 448px;">
 						<li><a href="mypage">마이페이지</a></li>
