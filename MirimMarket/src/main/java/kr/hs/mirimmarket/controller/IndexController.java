@@ -60,12 +60,20 @@ public class IndexController {
 		return model;
    }
 	
+	
 	// 카테고리 보기
 	@GetMapping("/category")
 	public ModelAndView category(@RequestParam("cate1") String cate1, @RequestParam(value="cate2", defaultValue = "") String cate2) {
 		ModelAndView model =new ModelAndView();
 		model.addObject("cate1", cate1);
 		model.addObject("cate2", cate2);
+		List<ProductDTO> productlist;
+		if(cate2.equals("")) {
+			productlist=service.getProductList2(cate1);
+		}else {
+			productlist=service.getProductList2(cate1, cate2);
+		}
+		model.addObject("productlist",productlist);
 		String cateName = (cate2.equals("")?cate1:cate1+" > " + cate2);
 		model.addObject("cateName", cateName);
 		model.setViewName("category");

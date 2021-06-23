@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,6 +24,16 @@ public class ProductDAO {
     public List<ProductDTO> getProductList(){
     	productMapper = sqlSession.getMapper(ProductMapper.class);
     	List<ProductDTO> productDAO = productMapper.getProductList();
+    	return productDAO;
+    }
+    public List<ProductDTO> getProductList1(String cate1){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductList1(cate1);
+    	return productDAO;
+    }
+    public List<ProductDTO> getProductList2(String cate1, String cate2){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductList2(cate1, cate2);
     	return productDAO;
     }
     

@@ -18,6 +18,13 @@ public class ProductService {
 		return productdao.getProductList();
 	}
 	
+	public List<ProductDTO> getProductList1(String cate1){
+		return productdao.getProductList1(cate1);
+	}
+	public List<ProductDTO> getProductList2(String cate1, String cate2){
+		return productdao.getProductList2(cate1, cate2);
+	}
+	
 	public  ProductDTO getProduct(int productID) {
 		return productdao.getProduct(productID);
 	}
