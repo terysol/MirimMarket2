@@ -18,6 +18,12 @@ public interface ProductMapper {
 	// 상품 리스트 보여주기
 	public List<ProductDTO> getProductList();
 	
+	// 카테고리(1개) 기준으로 상품 리스트 보여주기
+	public List<ProductDTO> getProductList1(@Param("cate1") int cate1);
+	
+	// 카테고리(2개) 기준으로 상품 리스트 보여주기
+	public List<ProductDTO> getProductList2(@Param("cate1") int cate1, @Param("cate2") int cate2);
+	
 	// seq 기준으로 상품 목록 가져오기
 	public  ProductDTO getProduct(@Param("productID") int productID);
 	

@@ -8,6 +8,14 @@
   	select * from Product1
   </select>
   
+  <select id="getProductList1"  parameterType="int" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from Product1 where 
+  </select>
+  
+  <select id="getProductList2" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from Product1
+  </select>
+  
   <select id="getProduct" parameterType="int" resultType="kr.hs.mirimmarket.dto.ProductDTO">
   	select * from Product1 where productID = #{productID}
   </select>

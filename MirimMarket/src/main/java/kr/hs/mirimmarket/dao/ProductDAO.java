@@ -26,6 +26,18 @@ public class ProductDAO {
     	return productDAO;
     }
     
+    public List<ProductDTO> getProductList(int category){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductList();
+    	return productDAO;
+    }
+    
+    public List<ProductDTO> getProductList(int category1, int category2){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductList();
+    	return productDAO;
+    }
+    
     public ProductDTO getProduct(int productID) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
     	ProductDTO product=productMapper.getProduct(productID);
