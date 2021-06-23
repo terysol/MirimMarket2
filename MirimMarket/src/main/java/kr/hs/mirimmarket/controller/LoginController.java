@@ -86,6 +86,15 @@ public class LoginController {
 		return mav;
 	}
 	
+	// 로그아웃
+	@RequestMapping("/logOut.do")
+	public ModelAndView logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		ModelAndView model =new ModelAndView();
+		model.setViewName("redirect:/main");
+		return model;
+	}
 	
 	// 마이페이지 보기
 	@RequestMapping("/mypage")
@@ -94,15 +103,14 @@ public class LoginController {
 		ModelAndView model =new ModelAndView();
 		String userId= (String) session.getAttribute("userId");
 		
-		// ProductDTO productlist= product.getRegister(userId);
 		List<InfoDTO> memberinfo= service.getInfo(userId);
 		
 		if(userId== null) {
+			// alert창 띄워주기
 			// session.setAttribute("message", "로그인 해주세요.");
+			model.setViewName("redirect:/main");
 		}else {
-			//System.out.println(member.getName());
 			model.addObject("memberInfo",memberinfo);
-			//model.addObject("productlist", productlist);
 			model.setViewName("mypage");
 		}
 		return model;

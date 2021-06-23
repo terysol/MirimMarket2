@@ -79,8 +79,13 @@
 					  }
 			      });
 				}else{
-					gauth.signOut().then(alert("로그아웃 되었습니다."));
-					location.href="./main";
+					gauth.signOut()
+					.then(
+							//localStorage.removeItem('token');
+							//localStorage.removeItem('name');
+							alert("로그아웃 되었습니다.")
+					);
+					location.href="./logOut.do";
 				}
 			  }
 		</script>

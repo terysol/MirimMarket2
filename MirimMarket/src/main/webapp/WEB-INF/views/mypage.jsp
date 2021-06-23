@@ -159,14 +159,14 @@
 								<span id="productPRICE" style="text-align: right;">${info.price }원</span>
 							</div>
 							<div id="productSEC" onclick="location.href='#'">
-								<img src="static/img/noimage.PNG" id="productIMG">
-								<span id="productTITLE">교복 마이</span>
-								<span id="productPRICE" style="text-align: right;">20,000원</span>
+								<img src="static/img${info.gdsImg }" id="productIMG">
+								<span id="productTITLE">${ info.title}</span>
+								<span id="productPRICE" style="text-align: right;">${info.price }원</span>
 							</div>
 							<div id="productSEC" onclick="location.href='#'">
-								<img src="static/img/noimage.PNG" id="productIMG">
-								<span id="productTITLE">교복 마이</span>
-								<span id="productPRICE" style="text-align: right;">20,000원</span>
+								<img src="static/img${info.gdsImg }" id="productIMG">
+								<span id="productTITLE">${ info.title}</span>
+								<span id="productPRICE" style="text-align: right;">${info.price }원</span>
 							</div>
 						</div>
 					
