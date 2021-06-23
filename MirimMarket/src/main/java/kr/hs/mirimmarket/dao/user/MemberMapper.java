@@ -4,14 +4,19 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.hs.mirimmarket.dto.InfoDTO;
 import kr.hs.mirimmarket.dto.MemberDTO;
+import kr.hs.mirimmarket.dto.ProductDTO;
 
 @Mapper
 public interface MemberMapper {
 	
 	public void insertMember(MemberDTO dto);
 	
-	public MemberDTO readMember(String userId);
-	
 	public int idCheck(String userId);
+	
+	// 이름 가져오기
+	public String getUserName(String productID);
+	
+	public List<InfoDTO> getInfo(String userID);
 }

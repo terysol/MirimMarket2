@@ -21,6 +21,8 @@ public interface ProductMapper {
 	// seq 기준으로 상품 목록 가져오기
 	public  ProductDTO getProduct(@Param("productID") int productID);
 	
+	public ProductDTO getRegister(String userID);
+	
 	// 조회수 update
 	public void updateClick(int productID);
 	

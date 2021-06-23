@@ -165,6 +165,7 @@
 		      [${p.category }]
 		      	 ${p.title }
 				&nbsp;${p.price}원]
+				${p.point }
 			<br />
 			<p>원본 이미지 </p>
 			<img src="static/img${p.gdsImg }">
@@ -172,7 +173,7 @@
 			
 		</c:forEach>
 		
-	
+			
 			<a href="Registration">상품등록 </a>
 			<a href="login">로그인</a>
 			<a href="mypage">마이페이지</a>

@@ -3,16 +3,56 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.hs.mirimmarket.dao.user.MemberMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
-  		
+  
+   <resultMap type="kr.hs.mirimmarket.dto.MemberDTO" id="memberMap">
+  	<result property="userID" column="userID"/>
+  	<result property="name" column="name"/>
+  	<result property="email" column="email"/>
+  	<result property="introduction" column="introduction"/>
+  	<result property="point" column="point"/>
+  	<result property="imageUrl" column="imageUrl"/>
+  </resultMap>
+  
+  <resultMap type="kr.hs.mirimmarket.dto.ProductDTO" id="productMap">
+  	<result property="productID" column="productID"/>
+  	<result property="userID" column="userID"/>
+  	<result property="userName" column="userName"/>
+  	<result property="title" column="title"/>
+  	<result property="category" column="category"/>
+  	<result property="gdsThumbImg" column="gdsThumbImg"/>
+  	<result property="gdsImg" column="gdsImg"/>
+  	<result property="price" column="price"/>
+  	<result property="amount" column="amount"/>
+  	<result property="state" column="state"/>
+  	<result property="explanation" column="explanation"/>
+  	<result property="click" column="click"/>
+  	<result property="date" column="date"/>
+  	<collection property="memberDTO" resultMap="memberMap"></collection>
+  </resultMap>
+  
+  
   <insert id="insertMember">
   	insert into member1(userID, name, email,imageUrl)
   	values (#{userID}, #{name}, #{email}, #{imageUrl})
   </insert>
   
-	<select id="readMember" parameterType="String" resultType="kr.hs.mirimmarket.dto.MemberDTO">
-  	select * from member1 where userID=#{userID}
+	<select id="getInfo" parameterType="String" resultType="kr.hs.mirimmarket.dto.InfoDTO">
+		  	select 
+		  		p.userID, p.productID, p.title, p.gdsImg, p.price,
+				m.name, m.introduction,m.point,m.imageUrl
+			from 
+				Product1 p, member1 m
+			WHERE p.userID = m.userID AND p.userID = #{userID}
   </select>
-	
+  
+	<select id="getUserName" parameterType="String" resultType="String">
+  		select 
+  			name 
+  		from 
+  			member1 
+  		where userID = #{userID}
+  </select>
+  
 	<select id="idCheck" parameterType="String" resultType="int">
 	  	select count(*) from member1 where userID=#{userID}
   </select>

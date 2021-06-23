@@ -22,6 +22,10 @@ public class ProductService {
 		return productdao.getProduct(productID);
 	}
 	
+	public  ProductDTO getRegister(String userID) {
+		return productdao.getRegister(userID);
+	}
+	
 	public void updateClick(int productID) {
 		productdao.updateClick(productID);
 	}

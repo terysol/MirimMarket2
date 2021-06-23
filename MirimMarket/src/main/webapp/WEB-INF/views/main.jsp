@@ -13,8 +13,8 @@
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="static/js/product.js"></script>
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		
+		<link rel="icon" type="image/png" href="static/img/logo.png"/>
 		<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 		<script>
 			function checkLoginStatus() { // 로그인인지 아닌지 확인

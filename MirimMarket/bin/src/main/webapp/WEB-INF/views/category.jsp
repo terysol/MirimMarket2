@@ -1,4 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -252,15 +253,16 @@
 			<!-- 상품 나열 -->
 			<div id="allproduct">
 				<div id="allproductROW">
-					<a id="product" href="product?productID=${ }">
+				<c:forEach items="${productlist }" var="p">
+					<a id="product" href="product?productID=${ p.productID}">
 						<div id="productIMGpos">
-							<img src="static/img/puppy.jpg" onerror="this.src = 'static/img/noimage.PNG'"/>
+							<img src="static/img${p.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 						</div>
 						<div id="productName">
-							<span>교복 마이</span>
+							<span>${p.title }</span>
 						</div>
 						<div id="productPrice">
-							<span>20,000</span><span style="font-size:14px;">원</span>
+							<span>${p.price }</span><span style="font-size:14px;">원</span>
 						</div>
 						<div id="productCategory">
 							<span>옷>교복</span>
@@ -306,7 +308,8 @@
 						</div>
 						<script> state(287, 19, 377, 7.5)</script>
 					</a>
-				</div>					
+				</div>
+									
 				<div id="allproductROW" style="top: 445px;">
 					<a id="product" href="static/page4/productpage.html">
 						<div id="productIMGpos">
@@ -419,6 +422,7 @@
 						<script> state(287, 19, 377, 7.5)</script>
 					</a>
 				</div>
+				
 				<div id="allproductROW" style="top: 1335px;">
 					<a id="product" href="static/page4/productpage.html">
 						<div id="productIMGpos">
@@ -474,6 +478,7 @@
 						</div>
 						<script> state(287, 19, 377, 7.5)</script>
 					</a>
+					</c:forEach>
 				</div>
 			</div>
 			

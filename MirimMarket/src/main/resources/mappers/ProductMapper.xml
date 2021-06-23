@@ -12,13 +12,17 @@
   	select * from Product1 where productID = #{productID}
   </select>
   
+  <select id="getRegister" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from Product1 where userID = #{userID}
+  </select>
+  
   <update id="updateClick" parameterType="int">
   	update Product1 set click= click+1 where productID = #{productID}
   </update>
   
   <insert id="insertProduct">
-  	insert into Product1(productID, userID, title, category, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
-				values((select ifnull(max(productID)+1,0) from Product1 as seq), #{userID}, #{title} , 
+  	insert into Product1(productID, userID, userName, title, category, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
+				values((select ifnull(max(productID)+1,0) from Product1 as seq), #{userID},#{userName}, #{title} , 
 				#{category}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
   </insert>
   <update id="updateImage">

@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductDTO {
 	private int productID;
 	private String userID;
+	private String userName;
 	private String title;
 	private String category;
 	private String gdsThumbImg;		// 썸네일 저장할 변수
@@ -18,6 +19,8 @@ public class ProductDTO {
 	private String explanation;
 	private int click;
 	private Date date;
+	
+	private MemberDTO member;
 	
 	public int getProductID() {
 		return productID;
@@ -30,6 +33,12 @@ public class ProductDTO {
 	}
 	public void setUserID(String userID) {
 		this.userID = userID;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getTitle() {
 		return title;
