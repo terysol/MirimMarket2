@@ -44,6 +44,13 @@ public class ProductDAO {
     	return product;
     	
     }
+    
+    public ProductDTO getRegister(String userID) {
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	ProductDTO product=productMapper.getRegister(userID);
+    	return product;
+    }
+    
     public void updateClick(int productID) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
     	productMapper.updateClick(productID);

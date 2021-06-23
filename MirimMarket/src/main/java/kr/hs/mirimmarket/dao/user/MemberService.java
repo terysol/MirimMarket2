@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.hs.mirimmarket.dto.InfoDTO;
 import kr.hs.mirimmarket.dto.MemberDTO;
+import kr.hs.mirimmarket.dto.ProductDTO;
 
 @Service
 public class MemberService {
@@ -16,12 +18,15 @@ public class MemberService {
 	public void insertMember(MemberDTO dto) {
 		userdao.insertMember(dto);
 	}
-	
-	public MemberDTO readMember(String userId) {
-		return userdao.readMember(userId);
-	}
-	
 	public int idCheck(String userId) {
 		return userdao.idCheck(userId);
+	}
+	
+	public String getUserName(String productID) {
+		return userdao.getUserName(productID);
+	}
+	
+	public List<InfoDTO> getInfo(String userID) {
+		return userdao.getInfo(userID);
 	}
 }

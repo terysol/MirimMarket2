@@ -14,10 +14,12 @@ function addIMG(event) {
 function plusSlides(n, order) {
     showSlides(slideIndex += n, order);
 }
+
 function currentSlide(n) {
     showSlides(slideIndex = n, 1);
     showSlides(slideIndex = n, 2);
 }
+
 function showSlides(n, order) {
     var i;
     var slides = document.getElementsByClassName("slider"+order);
@@ -28,6 +30,7 @@ function showSlides(n, order) {
     }
     slides[slideIndex-1].style.display = "block";  
 }
+
 window.onload = function(){
     currentSlide(1);
 }

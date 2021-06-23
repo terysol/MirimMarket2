@@ -5,7 +5,7 @@ public class MemberDTO  {
 	private String name;
 	private String email;
 	private String introduction;
-	private int point;
+	private String point;
 	private String imageUrl;
 	
 	public String getUserID() {
@@ -32,10 +32,10 @@ public class MemberDTO  {
 	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
-	public int getPoint() {
+	public String getPoint() {
 		return point;
 	}
-	public void setPoint(int point) {
+	public void setPoint(String point) {
 		this.point = point;
 	}
 	public String getImageUrl() {

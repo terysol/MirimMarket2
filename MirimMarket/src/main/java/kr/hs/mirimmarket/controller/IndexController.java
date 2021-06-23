@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.hs.mirimmarket.dao.ProductService;
 import kr.hs.mirimmarket.dao.user.MemberMapper;
+import kr.hs.mirimmarket.dao.user.MemberService;
 import kr.hs.mirimmarket.dto.ProductDTO;
 import kr.hs.mirimmarket.img.UploadFileUtils;
 
@@ -37,11 +38,12 @@ public class IndexController {
 	@Autowired
 	private ProductService service;
 	
+	@Autowired
+	private MemberService member;
+	
 	@Value("${custom.ckuplaod.url}")
 	private String uploadPath;
 	
-//	@Resource(name="uploadPath")
-//	private String uploadPath;
 	
 	@RequestMapping("/")
 	public ModelAndView root() {
@@ -50,7 +52,7 @@ public class IndexController {
 		return model;
    }
 
-	
+	// 메인
 	@RequestMapping("/index")
 	public ModelAndView index() {
 		ModelAndView model =new ModelAndView();
@@ -58,6 +60,7 @@ public class IndexController {
 		return model;
    }
 	
+	// 카테고리 보기
 	@GetMapping("/category")
 	public ModelAndView category(@RequestParam("cate1") String cate1, @RequestParam(value="cate2", defaultValue = "") String cate2) {
 		ModelAndView model =new ModelAndView();
@@ -76,24 +79,41 @@ public class IndexController {
 		return model;
    }
 	
+	// 상품 조회
 	@RequestMapping("/product")
-	public ModelAndView product() {
-		ModelAndView view =new ModelAndView();
-		view.setViewName("product");
-		return view;
-   }
-	
-	@RequestMapping("/registration")
-	public ModelAndView registration() {
+	public ModelAndView product(@RequestParam("productID") String productID) {
 		ModelAndView model =new ModelAndView();
-		model.setViewName("registration");
+		int seq=Integer.parseInt(productID);
+		service.updateClick(seq);		// 조회수 올리기
+		ProductDTO productdto = service.getProduct(seq);
+		model.addObject("product",productdto);
+		model.setViewName("product");
 		return model;
    }
+	
+	// 상품 등록 창
+		@RequestMapping("/registration")
+		public ModelAndView registration(HttpServletRequest request) {
+			ModelAndView model =new ModelAndView();
+			
+//			HttpSession session = request.getSession();
+//			String userId= (String) session.getAttribute("userId");
+//			if(userId == null) {
+//				mod.addAttribute("msg", "로그인해주세요.");
+//				mod.addAttribute("url","main.jsp");
+//				
+//			}else {
+//				
+//			}
+			model.setViewName("registration");
+			return model;
+			//return model;
+	   }
 	
 	@RequestMapping("/insert.do")
 	public ModelAndView insert(ProductDTO dto, MultipartFile image, HttpServletRequest request) throws IOException, Exception {
 		
-		//String uploadPath = request.getSession().getServletContext().getRealPath("/").concat("resources");
+		
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";  // 이미지를 업로드할 폴더를 설정 = /uploadPath/imgUpload
 		 String ymdPath = UploadFileUtils.calcPath(imgUploadPath);  // 위의 폴더를 기준으로 연월일 폴더를 생성
 		 String fileName = null;  // 기본 경로와 별개로 작성되는 경로 + 파일이름
@@ -103,7 +123,6 @@ public class IndexController {
 		  
 		  fileName =  UploadFileUtils.fileUpload(imgUploadPath, image.getOriginalFilename(), image.getBytes(), ymdPath);
 		  
-		  System.out.println(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		  // gdsImg에 원본 파일 경로 + 파일명 저장
 		  dto.setGdsImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 		  // gdsThumbImg에 썸네일 파일 경로 + 썸네일 파일명 저장
@@ -127,62 +146,4 @@ public class IndexController {
 		model.setViewName("redirect:/main");
 		return model;
 	}
-	
-	//@Autowired
-	//private BoardService s;
-	/*@RequestMapping(value="/", method=RequestMethod.GET)
-	public String root() {
-		return "index";
-	}
-	@RequestMapping(value="/index", method=RequestMethod.GET)
-	public String index() {
-		return "index";
-	}
-	@RequestMapping(value="/board", method=RequestMethod.GET)
-	public String board() {
-		return "board";
-	}
-	@RequestMapping(value="/write", method=RequestMethod.GET)
-	public String write() {
-		return "write";
-	}
-	@RequestMapping(value="/view", method=RequestMethod.GET)
-	public String view() {
-		return "view";
-	}
-	/*@RequestMapping(value="/writeAction", method=RequestMethod.POST)
-	public String writeAction(
-			HttpServletRequest req,@RequestParam("file") MultipartFile file,
-			@RequestParam("title")String title, 
-			@RequestParam("contents")String contents) throws IllegalStateException, IOException {
-		String PATH = req.getSession().getServletContext().getRealPath("/") + "resources/";
-		if (!file.getOriginalFilename().isEmpty()) {
-			file.transferTo(new File(PATH + file.getOriginalFilename()));
-		}
-		s.addBoard(new Board(0, title, contents, file.getOriginalFilename()));
-		return "board";
-	}
-	@RequestMapping(value="/boardList", method=RequestMethod.GET)
-	@ResponseBody
-	public List<Board> boardList(){
-		return s.getBoard();
-	}
-	@RequestMapping(value="/boardView", method=RequestMethod.GET)
-	@ResponseBody
-	public Board boardList(@RequestParam("idx")int idx){
-		return s.getBoardOne(idx);
-	}
-	@RequestMapping(value="/replyList", method=RequestMethod.GET)
-	@ResponseBody
-	public List<Reply> replyList(@RequestParam("idx")int boardIdx){
-		return s.getReply(boardIdx);
-	}
-	@RequestMapping(value="/writeReply", method=RequestMethod.POST)
-	public String writeReply(
-			@RequestParam("idx")int idx,
-			@RequestParam("replyIdx")int replyIdx,
-			@RequestParam("contents")String contents) {
-		s.addReply(new Reply(0, idx,replyIdx, contents));
-		return "redirect:view?idx=" + idx;
-	}*/
 }
