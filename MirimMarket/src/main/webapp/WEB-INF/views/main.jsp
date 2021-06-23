@@ -16,8 +16,6 @@
 		
 		<link rel="icon" type="image/png" href="static/img/logo.png"/>
 		
-		
-		
 		<link href="static/css/slider.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/selectbox.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/product.css" rel="stylesheet" type="text/css" />

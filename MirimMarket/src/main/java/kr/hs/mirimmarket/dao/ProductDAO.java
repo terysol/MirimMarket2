@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.hs.mirimmarket.dto.LikeDTO;
 import kr.hs.mirimmarket.dto.ProductDTO;
 
 @Repository
@@ -75,5 +76,33 @@ public class ProductDAO {
     public void updateImage(Map<String, Object> hamp,int productID) {
     	productMapper = sqlSession.getMapper(ProductMapper.class);
     	productMapper.updateImage(hamp,productID);
+    }
+    
+    public void likeProduct(LikeDTO dto) {
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	productMapper.likeProduct(dto);
+    }
+    
+    public List<ProductDTO> getProductCate1(String cate1){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductCate1(cate1);
+    	return productDAO;
+    }
+    
+    public List<ProductDTO> getProductCate2(String cate2){
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	List<ProductDTO> productDAO = productMapper.getProductCate1(cate2);
+    	return productDAO;
+    }
+    
+    public void updateLike(int productID) {
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	productMapper.updateLike(productID);
+    }
+    
+    public String selectLike(int productID) {
+    	productMapper = sqlSession.getMapper(ProductMapper.class);
+    	String isLike=productMapper.selectLike(productID);
+    	return isLike;
     }
 }

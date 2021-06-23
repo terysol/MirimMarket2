@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-
+import kr.hs.mirimmarket.dto.LikeDTO;
 import kr.hs.mirimmarket.dto.ProductDTO;
 
 @Mapper
@@ -36,4 +36,14 @@ public interface ProductMapper {
 	public void insertProduct(ProductDTO dto);
 
 	public void updateImage(@Param("image")Map<String, Object> hmap, @Param("productID") int productID);
+	
+	public void likeProduct(LikeDTO dto);
+	
+	public List<ProductDTO> getProductCate1(String cate1);
+	
+	public List<ProductDTO> getProductCate2(String cate2);
+	
+	public void updateLike(int productID);
+	
+	public String selectLike(int productID);
 }
