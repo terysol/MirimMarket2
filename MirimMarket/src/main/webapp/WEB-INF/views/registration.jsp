@@ -119,7 +119,7 @@
 		</div>
 
 		<!-- 상품등록 FORM -->
-		<form action="insert.do" class="regisSECTION" method="post">
+		<form action="insert.do" class="regisSECTION" method="post" enctype="multipart/form-data">
 			<!-- 카테고리 선택 -->
 			<div id="regisFONT1">카테고리</div>
 			<div id="regisFONT2">*</div>
@@ -161,10 +161,10 @@
 				<label class="input_img_label" for="input_file">
 					<img src="static/img/addPhoto.png">
 				</label>
-				<input type="file" id="input_file" style="display:none"  accept="image/*" onchange="addIMG(event);" multiple/> 
+				<input type="file" id="input_file" name="image" style="display:none"  accept="image/*" onchange="addIMG(event);" multiple/> 
 				<div class="inputIMG"></div>
 			</div>
-
+			<%=request.getRealPath("/") %>
 			<!-- 가격 입력 -->
 			<div id="regisFONT1" style="top: 625px;">가격</div>
 			<div id="regisFONT2" style="top: 635px; left: 165px;">*</div>

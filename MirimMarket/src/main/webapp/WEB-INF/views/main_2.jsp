@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>메인</title>
-		<link rel="shortcut icon" href="#">
+		<link rel="icon" type="image/png" href="http://example.com/myicon.png">
 		<style type="text/css">
 		#topMY {
 			fill: transparent;
@@ -160,13 +160,19 @@
 			</path></svg> -->
 			
 		
-	
-		<%-- <c:forEach items="${productlist }" var="p">
+		
+		<c:forEach items="${productlist }" var="p">
 		      [${p.category }]
-		      	<a href="BuyProduct?seq=${p.seq }"> ${p.title }
-				&nbsp;${p.price}원 </a>
+		      	 ${p.title }
+				&nbsp;${p.price}원]
 			<br />
-		</c:forEach> --%>
+			<p>원본 이미지 </p>
+			<img src="static/img${p.gdsImg }">
+			<p>${p.gdsImg }</p>
+			
+		</c:forEach>
+		
+	
 			<a href="Registration">상품등록 </a>
 			<a href="login">로그인</a>
 			<a href="mypage">마이페이지</a>
