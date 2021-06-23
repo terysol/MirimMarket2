@@ -10,7 +10,8 @@ public class ProductDTO {
 	private String userID;
 	private String userName;
 	private String title;
-	private String category;
+	private String cate1;
+	private String cate2;
 	private String gdsThumbImg;		// 썸네일 저장할 변수
 	private String gdsImg;			// 상품 등록 쿼리의 이미지
 	private int price;
@@ -46,13 +47,19 @@ public class ProductDTO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
 	
+	public String getCate1() {
+		return cate1;
+	}
+	public void setCate1(String cate1) {
+		this.cate1 = cate1;
+	}
+	public String getCate2() {
+		return cate2;
+	}
+	public void setCate2(String cate2) {
+		this.cate2 = cate2;
+	}
 	public String getGdsThumbImg() {
 		return gdsThumbImg;
 	}

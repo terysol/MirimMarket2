@@ -12,6 +12,14 @@
   	select * from Product1 where productID = #{productID}
   </select>
   
+  <select id="getProductCate1" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from Product1 where cate1 = #{cate1}
+  </select>
+  
+   <select id="getProductCate2" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
+  	select * from Product1 where cate2 = #{cate2}
+  </select>
+  
   <select id="getRegister" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
   	select * from Product1 where userID = #{userID}
   </select>
@@ -21,12 +29,32 @@
   </update>
   
   <insert id="insertProduct">
-  	insert into Product1(productID, userID, userName, title, category, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
+  	insert into Product1(productID, userID, userName, title, cate1,cate2, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
 				values((select ifnull(max(productID)+1,0) from Product1 as seq), #{userID},#{userName}, #{title} , 
-				#{category}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
+				#{cate1}, #{cate2}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
   </insert>
+  
   <update id="updateImage">
   	update Product1 set image=#{image} where productID= #{productID}
   </update>
-
+	
+	<insert id="insertLike">
+		insert into likeProduct(userID, productID) values (#{userID}, #{productID})
+	</insert>
+	
+	<update id="updateLike" parameterType="int">
+		update 
+			likeProduct 
+		set 
+			isLike = 
+				case 
+					when isLike="static/img/heartOFF.png" then "static/img/heartON.png"
+					else "static/img/heartOFF.png"
+				end
+		where productID = #{productID}
+	</update>
+	
+	<select id="selectLike" parameterType="int" resultType="String">
+		select isLike from likeProduct where productID= #{productID}
+	</select>
 </mapper>

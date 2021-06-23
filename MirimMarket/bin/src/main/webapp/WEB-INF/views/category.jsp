@@ -160,16 +160,16 @@
 			<!-- 상품 나열 -->
 			<div id="allproduct">
 				<div id="allproductROW">
-				<c:forEach items="${productlist }" var="p">
-					<a id="product" href="product?productID=${ p.productID}">
+				
+					<a id="product" href="static/page4/productpage.html">
 						<div id="productIMGpos">
-							<img src="static/img${p.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
+							<img src="static/img/puppy.jpg" onerror="this.src = 'static/img/noimage.PNG'"/>
 						</div>
 						<div id="productName">
-							<span>${p.title }</span>
+							<span>교복 마이</span>
 						</div>
 						<div id="productPrice">
-							<span>${p.price }</span><span style="font-size:14px;">원</span>
+							<span>20,000</span><span style="font-size:14px;">원</span>
 						</div>
 						<div id="productCategory">
 							<span>옷>교복</span>
@@ -385,7 +385,6 @@
 						</div>
 						<script> state(287, 19, 377, 7.5)</script>
 					</a>
-					</c:forEach>
 				</div>
 			</div>
 			

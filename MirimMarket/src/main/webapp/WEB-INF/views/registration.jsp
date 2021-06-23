@@ -33,7 +33,7 @@
 			<div id="regisFONT1">카테고리</div>
 			<div id="regisFONT2">*</div>
 			<div id="categorySECTION">
-				<select class="selectBOX" name="category">
+				<select class="selectBOX" name="cate2">
 					<optgroup label="CLOTHES" >
 						<option>교복</option>
 						<option>체육복</option>
@@ -45,7 +45,7 @@
 						<option>일반도서</option>
 						<option>교과서</option>
 					</optgroup>
-					<optgroup label="OTHERS" name="category">
+					<optgroup label="OTHERS" >
 						<option>학용품</option>
 						<option>학교굿즈</option>
 						<option>주변기기</option>

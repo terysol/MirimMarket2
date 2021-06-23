@@ -59,8 +59,8 @@
 					                  var string = '{ "token":"' + userInfo_at + '"}';
 				                      var payload = JSON.parse(string);
 				                     
-				                      localStorage.setItem('token', payload.token);
-				                      localStorage.setItem('name', userName);
+				                      // localStorage.setItem('token', payload.token);
+				                      // localStorage.setItem('name', userName);
 				                  } else {
 				                      console.error(xhr.responseText);
 				                  }
@@ -85,7 +85,6 @@
 		</script>
 	</head>
 	<body>
-		
 				<!-- 상단바 -->
 				<div id="topMENU1">
 					<!-- 고정되어 있는 상단바-->

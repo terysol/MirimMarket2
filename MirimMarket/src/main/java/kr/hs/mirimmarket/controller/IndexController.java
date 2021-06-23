@@ -29,6 +29,7 @@ import kr.hs.mirimmarket.dao.ProductService;
 import kr.hs.mirimmarket.dao.user.MemberMapper;
 import kr.hs.mirimmarket.dao.user.MemberService;
 import kr.hs.mirimmarket.dto.ProductDTO;
+import kr.hs.mirimmarket.dto.LikeDTO;
 import kr.hs.mirimmarket.img.UploadFileUtils;
 
 @RestController
@@ -64,14 +65,24 @@ public class IndexController {
 	@GetMapping("/category")
 	public ModelAndView category(@RequestParam("cate1") String cate1, @RequestParam(value="cate2", defaultValue = "") String cate2) {
 		ModelAndView model =new ModelAndView();
-		model.addObject("cate1", cate1);
-		model.addObject("cate2", cate2);
+//		List<ProductDTO> productlist=service.getProductList();
+//		model.addObject("cate1", cate1);
+//		model.addObject("cate2", cate2);
 		String cateName = (cate2.equals("")?cate1:cate1+" > " + cate2);
-		model.addObject("cateName", cateName);
+//		model.addObject("cateName", cateName);
+		
+		if(cate2.equals("")) {
+			List<ProductDTO> productlist = service.getProductCate1(cate1);
+			model.addObject("productlist",productlist);
+		}else {
+			List<ProductDTO> productlist = service.getProductCate2(cate2);
+			model.addObject("productlist", productlist);
+		}
 		model.setViewName("category");
 		return model;
    }
 	
+	// 상품 수정하기
 	@RequestMapping("/modify")
 	public ModelAndView modify() {
 		ModelAndView model =new ModelAndView();
@@ -91,25 +102,43 @@ public class IndexController {
 		return model;
    }
 	
+	@RequestMapping("/product.do")
+	public ModelAndView likeproduct(LikeDTO dto, @RequestParam(value="productID",required=false)String productID ,
+			@RequestParam("OnOff") String OnOff, HttpServletRequest request) {
+		ModelAndView model =new ModelAndView();
+		HttpSession session = request.getSession();
+		
+		String userId= (String) session.getAttribute("userId");
+		int seq=Integer.parseInt(productID);
+		dto.setUserID(userId);  dto.setProductID(seq);
+		service.likeProduct(dto);
+		
+		service.updateLike(seq);
+		String isLike = service.selectLike(seq);
+		System.out.println(isLike);
+		model.addObject("isLike",isLike);
+		model.setViewName("redirect:/product?productID=" + seq);
+		return model;
+	}
+	
 	// 상품 등록 창
 		@RequestMapping("/registration")
 		public ModelAndView registration(HttpServletRequest request) {
 			ModelAndView model =new ModelAndView();
 			
-//			HttpSession session = request.getSession();
-//			String userId= (String) session.getAttribute("userId");
-//			if(userId == null) {
-//				mod.addAttribute("msg", "로그인해주세요.");
-//				mod.addAttribute("url","main.jsp");
-//				
-//			}else {
-//				
-//			}
-			model.setViewName("registration");
+			HttpSession session = request.getSession();
+			String userId= (String) session.getAttribute("userId");
+			if(userId == null) {
+				
+				
+			}else {
+				model.setViewName("registration");
+			}
 			return model;
 			//return model;
 	   }
 	
+	// 상품 등록 
 	@RequestMapping("/insert.do")
 	public ModelAndView insert(ProductDTO dto, MultipartFile image, HttpServletRequest request) throws IOException, Exception {
 		
@@ -138,7 +167,18 @@ public class IndexController {
 		
 		HttpSession session = request.getSession();
 		String userId= (String) session.getAttribute("userId");
-		dto.setUserID(userId);
+		String userName=member.getUserName(userId);
+		dto.setUserID(userId);  dto.setUserName(userName);
+		
+		if(dto.getCate2().equals("교복") || dto.getCate2().equals("체육복") || dto.getCate2().equals("사복") || dto.getCate2().equals("액세서리")) {
+			dto.setCate1("의류");
+		}
+		if(dto.getCate2().equals("전공도서") || dto.getCate2().equals("일반도서") || dto.getCate2().equals("교과서")) {
+			dto.setCate1("도서");
+		}
+		if(dto.getCate2().equals("학용품") || dto.getCate2().equals("학교굿즈") || dto.getCate2().equals("주변기기") || dto.getCate2().equals("기타 상품")) {
+			dto.setCate1("기타");
+		}
 		service.insertProduct(dto);
 
 	

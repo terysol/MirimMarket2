@@ -22,8 +22,8 @@ public class MemberService {
 		return userdao.idCheck(userId);
 	}
 	
-	public String getUserName(String productID) {
-		return userdao.getUserName(productID);
+	public String getUserName(String userID) {
+		return userdao.getUserName(userID);
 	}
 	
 	public List<InfoDTO> getInfo(String userID) {

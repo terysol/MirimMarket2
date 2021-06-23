@@ -16,7 +16,7 @@ public interface MemberMapper {
 	public int idCheck(String userId);
 	
 	// 이름 가져오기
-	public String getUserName(String productID);
+	public String getUserName(String userID);
 	
 	public List<InfoDTO> getInfo(String userID);
 }

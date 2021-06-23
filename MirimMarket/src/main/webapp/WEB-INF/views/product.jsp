@@ -9,8 +9,9 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>상품 페이지</title>
-
+	<title>미림마켓</title>
+	
+	<link rel="icon" type="image/png" href="static/img/logo.png"/>
 	<link href="static/css/top.css" rel="stylesheet" type="text/css" />
 	<link href="static/css/slider.css" rel="stylesheet" type="text/css" />
 	<link href="static/css/otherProduct.css" rel="stylesheet" type="text/css" />
@@ -297,6 +298,18 @@
 				
 				var imgSrc = on === currentIMG ? off : on;
 				$(".productHEART img").attr("src", imgSrc);
+				// location.href="./product.do?productID=0&OnOff=" + (on === currentIMG ? "off" : "on");
+				$.ajax({
+					url:"product.do?productID=0",
+					type:"POST",
+					data:imgSrc,
+					success:function(data){
+
+					},
+					error:function(){
+						
+					}
+				})
 			});
 			// 이미지 클릭시 해당 이미지 모달
 			$(".imgSlider").click(function(){
@@ -359,7 +372,8 @@
 			<img src="" alt="">
 		</div>
 	</div>
-
+	
+	<input type="hidden" value="0" name="productID">
 	<div id="category">의류 > 교복</div>
 	<div id="productFONT1">조회 50회</div>
 	<div id="productFONT1" style="left: 1406px;">등록일 2021-04-02</div>
