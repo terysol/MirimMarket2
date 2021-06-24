@@ -5,17 +5,16 @@
 <mapper namespace="kr.hs.mirimmarket.dao.user.MemberMapper"><!--namespace를 통해 UserDAO와 연결합니다. -->
   		
   <insert id="insertMember">
-  	insert into user1(userId, name, email,imageUrl)
-  	values (#{userId}, #{name}, #{email}, #{imageUrl})
+  	insert into member1(userID, name, email,imageUrl)
+  	values (#{userID}, #{name}, #{email}, #{imageUrl})
   </insert>
   
 	<select id="readMember" parameterType="String" resultType="kr.hs.mirimmarket.dto.MemberDTO">
-  	select * from
-  	where userId=#{userId}
+  	select * from member1 where userID=#{userID}
   </select>
 	
 	<select id="idCheck" parameterType="String" resultType="int">
-	  	select count(*) from user1 where userId=#{userId}
+	  	select count(*) from member1 where userID=#{userID}
   </select>
 	
 </mapper>

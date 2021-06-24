@@ -12,7 +12,6 @@
 		<title>미림마켓</title>
 		
 		
-		<script type="text/javascript" src="static/js/product.js"></script>
 		
 		<link rel="icon" type="image/png" href="static/img/logo.png"/>
 		
@@ -356,7 +355,7 @@
 						<c:if test="${i%j == 0 }" >
 							<div id="allproductROW" style="top:${i/j*445}px">
 						</c:if>
-						<a id="product" href="BuyProduct?productID=${product.productID }">
+						<a id="product" href="product?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 							</div>

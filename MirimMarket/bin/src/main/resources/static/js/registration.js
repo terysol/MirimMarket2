@@ -17,7 +17,7 @@ function addIMG(event) {
                 img.setAttribute("src", event.target.result); 
                 span.appendChild(img); 
             }; 
-            //console.log(input_file); 
+            console.log(input_file); 
             reader.readAsDataURL(input_file); 
         }
     else

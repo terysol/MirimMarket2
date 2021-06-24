@@ -73,7 +73,6 @@
 				<input type="file" id="input_file" name="image" style="display:none"  accept="image/*" onchange="addIMG(event);" multiple/> 
 				<div class="inputIMG"></div>
 			</div>
-			<%=request.getRealPath("/") %>
 			<!-- 가격 입력 -->
 			<div id="regisFONT1" style="top: 625px;">가격</div>
 			<div id="regisFONT2" style="top: 635px; left: 165px;">*</div>
@@ -113,8 +112,9 @@
 
 			<!-- 버튼(등록 & 취소)-->
 			<button type="submit" class="buttonREGIS">등록하기</button>
-			<button class="buttonCANCLE">취소하기</button>
+			<a href="index"><button type="button" class="buttonCANCLE">취소하기</button></a>
 		</form>
+		
 		<div class="blank"></div> <!-- 맨 아래 공간 만들기 -->
 	</body>
 </html>

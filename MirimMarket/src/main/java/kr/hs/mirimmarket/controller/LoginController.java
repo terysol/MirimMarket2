@@ -5,12 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
@@ -98,7 +100,7 @@ public class LoginController {
 	
 	// 마이페이지 보기
 	@RequestMapping("/mypage")
-	public ModelAndView mypage(HttpServletRequest request) {
+	public ModelAndView mypage(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
 		ModelAndView model =new ModelAndView();
 		String userId= (String) session.getAttribute("userId");

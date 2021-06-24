@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>메인</title>
-		<link rel="shortcut icon" href="#">
+		<link rel="icon" type="image/png" href="http://example.com/myicon.png">
 		<style type="text/css">
 		#topMY {
 			fill: transparent;
@@ -35,17 +35,17 @@
 		<script>
 			
 			function checkLoginStatus() { // 로그인인지 아닌지 확인
-				var loginBtn = document.querySelector('#loginBtn');
+				//var loginBtn = document.querySelector('#loginBtn');
 				var nameTxt = document.querySelector('#name');
 				// gauth.isSignedIn.get()   -> 로그인이 되어 있는지 아닌지 확인 
 				if (gauth.isSignedIn.get()) { // 로그인이 되어 있다면
 					console.log('logined');
-					loginBtn.value = 'Logout';
+					//loginBtn.value = 'Logout';
 					var profile = gauth.currentUser.get().getBasicProfile(); // 현제 로그인 사용자 정보를 가져오기
 					nameTxt.innerHTML = profile.getName();
 				} else {		// 로그인이 안 되어 있다면 
 					console.log('logouted');
-					loginBtn.value = 'Login';
+					//loginBtn.value = 'Login';
 					nameTxt.innerHTML = '';
 				}
 			}
@@ -63,7 +63,6 @@
 					});
 				});
 			}
-
 			/* function onSignIn(googleUser) {
 				
 				  var profile = googleUser.getBasicProfile();
@@ -72,7 +71,6 @@
 				  console.log('Image URL: ' + profile.getImageUrl());
 				  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 			} */
-
 			function Logout(){
 				var auth2 = gapi.auth2.getAuthInstance();
 			    auth2.signOut().then(function () {
@@ -123,7 +121,7 @@
 	</head>
 	<body>
 		<span id="name"></span>
-		<input type="button" id="loginBtn" value = "checking.." onclick="
+		<!-- <input type="button" id="loginBtn" value = "checking.." onclick="
 			if(this.value === 'Login'){
 			      gauth.signIn({
 			        scope:'https://people.googleapis.com/v1/people/me'
@@ -135,7 +133,7 @@
 			        checkLoginStatus();
 			      });
 			    }
-			"/>
+			"/> -->
 			
 			
 			<!-- Add where you want your sign-in button to render -->
@@ -162,15 +160,21 @@
 			</path></svg> -->
 			
 		
-	
+		
 		<c:forEach items="${productlist }" var="p">
 		      [${p.category }]
-		      	<a href="BuyProduct?seq=${p.seq }"> ${p.title }
-				&nbsp;${p.price}원 </a>
+		      	 ${p.title }
+				&nbsp;${p.price}원]
 			<br />
+			<p>원본 이미지 </p>
+			<img src="static/img${p.gdsImg }">
+			<p>${p.gdsImg }</p>
+			
 		</c:forEach>
+		
+	
 			<a href="Registration">상품등록 </a>
 			<a href="login">로그인</a>
-			
+			<a href="mypage">마이페이지</a>
 	</body>
 </html>
