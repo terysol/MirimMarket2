@@ -131,12 +131,7 @@ public class IndexController {
 			
 			HttpSession session = request.getSession();
 			String userId= (String) session.getAttribute("userId");
-			if(userId == null) {
-				
-				
-			}else {
-				model.setViewName("registration");
-			}
+			model.setViewName("registration");
 			return model;
 			//return model;
 	   }
@@ -171,7 +166,14 @@ public class IndexController {
 		HttpSession session = request.getSession();
 		String userId= (String) session.getAttribute("userId");
 		String userName=member.getUserName(userId);
-		dto.setUserID(userId);  dto.setUserName(userName);
+		
+		if(userId == null && userName == null) {
+			dto.setUserID("테스트용 아이디"); dto.setUserName("테스트용 이름");
+		}else {
+			dto.setUserID(userId);  dto.setUserName(userName);
+		}
+		
+		
 		
 		if(dto.getCate2().equals("교복") || dto.getCate2().equals("체육복") || dto.getCate2().equals("사복") || dto.getCate2().equals("액세서리")) {
 			dto.setCate1("의류");
