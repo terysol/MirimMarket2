@@ -73,6 +73,14 @@
 	stroke-miterlimit: 4;
 	shape-rendering: auto;
 }
+#topUSER{
+   position: absolute;
+   top: 40px;
+   right: 300px;
+   float: right;
+   font-family: 'TmoneyRoundWind';
+   font-size: 23px;
+}
 .topADD_ {
 	position: absolute;
 	overflow: visible;

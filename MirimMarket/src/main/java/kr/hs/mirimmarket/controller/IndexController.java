@@ -49,6 +49,8 @@ public class IndexController {
 	@RequestMapping("/")
 	public ModelAndView root() {
 		ModelAndView model =new ModelAndView();
+		List<ProductDTO> productlist=service.getProductList();
+		model.addObject("productlist",productlist);
 		model.setViewName("main");
 		return model;
    }
@@ -57,6 +59,8 @@ public class IndexController {
 	@RequestMapping("/index")
 	public ModelAndView index() {
 		ModelAndView model =new ModelAndView();
+		List<ProductDTO> productlist=service.getProductList();
+		model.addObject("productlist",productlist);
 		model.setViewName("main");
 		return model;
    }

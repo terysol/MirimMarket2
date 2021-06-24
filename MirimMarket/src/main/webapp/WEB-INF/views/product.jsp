@@ -268,6 +268,29 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
+		function state(left, leftDIS, top, size){
+		    const maxState = 5;
+		    var state = 0;
+		    var state1='<c:out value="${product.state}"/>';
+		    if(state1 === "최상") state=5;
+		    else if (state1 === "상") state=4;
+		    else if(state1 === "중") state=3;
+		    else if(state1 === "하") state=2;
+		    else if(state1 === "최하") state=1;
+		    for(var i=1; i<=state; i++){
+		        document.write(
+		            '<svg class="productStateFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+		        );
+		        left += leftDIS;
+		    }
+	
+		    for(var i=state; i<maxState; i++){
+		        document.write(
+		            '<svg class="productStateNoneFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateNoneFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+		        );
+		        left += leftDIS;
+		    }
+		}
 		function plusSlides(n) {
 			showSlides(slideIndex += n);
 		}
@@ -345,7 +368,7 @@
 	<div class="productIMGslider">
 		<!-- 상품 이미지 -->
 		<div class="imgSlider fade">
-			<img src="static/img/noimage.PNG">
+			<img src="static/img${product.gdsImg }">
 		</div>            
 		<div class="imgSlider fade">
 		  	<img src="static/img/puppy.jpg">
@@ -374,12 +397,12 @@
 	</div>
 	
 	<input type="hidden" value="0" name="productID">
-	<div id="category">의류 > 교복</div>
-	<div id="productFONT1">조회 50회</div>
-	<div id="productFONT1" style="left: 1406px;">등록일 2021-04-02</div>
-	<div id="productTITLE">1학년 체육복</div>
-	<div id="productFONT2">재고 : 1개 남음</div>
-	<div id="productFONT2" style="top:455px">상태 : 상</div>
+	<div id="category">${product.cate1 } > ${product.cate2 }</div>
+	<div id="productFONT1">조회 ${product.click }회</div>
+	<div id="productFONT1" style="left: 1406px;">등록일 ${product.nowDate }</div>
+	<div id="productTITLE">${product.title }</div>
+	<div id="productFONT2">재고 : ${product.amount }개 남음</div>
+	<div id="productFONT2" style="top:455px">상태 : ${product.state }</div>
 	<!-- 상품 상태 시각화(점들로 표현) -->
 	<script>state(1075, 38, 457, 15)</script>
 	<div id="productFONT2" style="left: 1385px; top: 512px; font-size: 42px;">20,000<span style="font-size:26px;">원</span></div>
@@ -401,7 +424,7 @@
 		<div class="detailFONT">상세 정보</div>
 		<hr>
 		<div class="detailFONT detailSECTION">
-			잘 세탁해서 냄새가 나지 않습니다. 색이 같아서 입을 수 있을 겁니다. 사이즈는 100입니다!
+			${product.explanation }
 		</div>
 
 		<!-- 다른 상품 둘러보기 -->

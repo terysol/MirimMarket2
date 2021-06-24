@@ -29,16 +29,16 @@
   </update>
   
   <insert id="insertProduct">
-  	insert into Product1(productID, userID, userName, title, cate1,cate2, gdsThumbImg, gdsImg, price,amount, state, explanation,click,date) 
+  	insert into Product1(productID, userID, userName, title, cate1,cate2, gdsThumbImg, gdsImg, price,amount, state, explanation,click, nowDate) 
 				values((select ifnull(max(productID)+1,0) from Product1 as seq), #{userID},#{userName}, #{title} , 
-				#{cate1}, #{cate2}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as date))
+				#{cate1}, #{cate2}, #{gdsThumbImg}, #{gdsImg }, #{price}, #{amount}, #{state}, #{explanation},0, (select curdate() as nowDate))
   </insert>
   
   <update id="updateImage">
   	update Product1 set image=#{image} where productID= #{productID}
   </update>
 	
-	<insert id="insertLike">
+	<insert id="likeProduct">
 		insert into likeProduct(userID, productID) values (#{userID}, #{productID})
 	</insert>
 	
