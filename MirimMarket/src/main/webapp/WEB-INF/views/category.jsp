@@ -141,8 +141,6 @@
 			<div id="categorySECTION">
 					<span>${cateName}</span>
 			</div>
-			
-				
 	
 				<!-- [정렬순] 셀렉트 박스 -->
 				<select class="selectbox" style="top: 287px;">
@@ -157,11 +155,14 @@
 				<!-- [카테고리] 셀렉트 박스 -->
 				<!-- 링크 추가!! -->
 				<!-- 상품 나열 -->
-				
-				<div id="allproduct">
-					<div id="allproductROW">
+				<c:set var="i" value="0" />
+				<c:set var="j" value="3" />
 					
+				<div id="allproduct">
 					<c:forEach items="${productlist}" var="product">
+						<c:if test="${i%j == 0 }" >
+							<div id="allproductROW" style="top:${i/j*445}px">
+						</c:if>
 						<a id="product" href="BuyProduct?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
@@ -180,6 +181,10 @@
 							</div>
 							<script> state(287, 19, 377, 7.5)</script>
 						</a>
+						<c:if test="${i%j == j-1 }">
+							</div>
+						</c:if>
+						<c:set var="i" value="${i+1 }" />
 						</c:forEach>
 						<!-- 
 						</a>
