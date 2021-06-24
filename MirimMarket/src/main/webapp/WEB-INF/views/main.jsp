@@ -1,4 +1,4 @@
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
@@ -13,6 +13,32 @@
 		
 		
 		<script type="text/javascript" src="static/js/product.js"></script>
+		
+		 <script>
+	         function state(left, leftDIS, top, size, state1){
+	             const maxState = 5;
+	             var state = 0;
+	             if(state1 === "최상") state=5;
+	             else if (state1 === "상") state=4;
+	             else if(state1 === "중") state=3;
+	             else if(state1 === "하") state=2;
+	             else if(state1 === "최하") state=1;
+	             
+	             for(var i=1; i<=state; i++){
+	                 document.write(
+	                     '<svg class="productStateFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+	                 );
+	                 left += leftDIS;
+	             }
+	      
+	             for(var i=state; i<maxState; i++){
+	                 document.write(
+	                     '<svg class="productStateNoneFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateNoneFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+	                 );
+	                 left += leftDIS;
+	             }
+	         }
+      </script>
 		
 		<link rel="icon" type="image/png" href="static/img/logo.png"/>
 		
@@ -32,14 +58,12 @@
 				font-weight: normal;
 				font-style: normal;
 			}
-
 			#banner {
 				position: absolute;
 				left: 0px;
 				top: 120px;
 				z-index: -1;
 			}
-
 			#titleFONT {
 				left: 363px;
 				top: 1627px;
@@ -54,7 +78,6 @@
 				font-size: 30px;
 				color: rgba(69,69,69,1);
 			}
-
 			#middle {
 				position: absolute;
 				left: 0px;
@@ -118,7 +141,6 @@
 				font-size: 12px;
 				color: rgba(69,69,69,1);
 			}
-
 			#newsletter{ cursor: pointer; }
 			.newsletterPHOTO1 {
 				filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
@@ -193,7 +215,6 @@
 				height: 400px;
 				overflow: hidden;
 			}
-
 			.bottom {
 				position: absolute;
 				overflow: visible;
@@ -243,7 +264,7 @@
 							<div id="productState">
 								<span>상태: ${product.state }</span>
 							</div>
-							<script> state(287, 19, 377, 7.5)</script>
+							<script> state(287, 19, 377, 7.5, "${product.state}")</script>
 						</a>
 						<c:if test="${i%j == j-1 }">
 							</li>
@@ -306,7 +327,7 @@
 				<span>미림마켓 소식지</span>
 			</div>
 			<!-- 소식지1 -->
-			<div id="newsletter" onclick="location.href='https://github.com/alsals126/mirimmarket_FRONT'">
+			<div id="newsletter" onclick="alert('준비중입니다!');">
 				<img src="static/img/puppy.jpg" class="newsletterPHOTO1">
 				<svg class="newsletterPHOTO2">
 					<rect id="newsletterPHOTO2" rx="0" ry="0" x="0" y="0" width="582" height="118"></rect>
@@ -317,7 +338,7 @@
 				</div>
 			</div>
 			<!-- 소식지2 -->
-			<div id="newsletter" onclick="location.href='https://pbs.twimg.com/media/D8b6XiaUIAAY1zG.jpg'">
+			<div id="newsletter" onclick="alert('준비중입니다!');">
 				<img src="static/img/puppy.jpg" class="newsletterPHOTO1" style="left: 975px; top: 1688px;">
 				<svg class="newsletterPHOTO2" style="left: 975px;">
 					<rect id="newsletterPHOTO2" rx="0" ry="0" x="0" y="0" width="582" height="118"></rect>
@@ -327,7 +348,7 @@
 					<span>"철이 없었죠.... 그땐."</span><br><span style="color:rgba(0,0,0,1);">미림인 B양의 첫 교내봉사 후기</span>
 				</div>
 			</div>
-			<div id="viewmoreFONT" onclick="location.href='#'">
+			<div id="viewmoreFONT" onclick="location.href=''">
 				<span>더보기 ></span>
 			</div>
 				
@@ -356,7 +377,7 @@
 						<c:if test="${i%j == 0 }" >
 							<div id="allproductROW" style="top:${i/j*445}px">
 						</c:if>
-						<a id="product" href="BuyProduct?productID=${product.productID }">
+						<a id="product" href="product?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 							</div>
@@ -372,7 +393,7 @@
 							<div id="productState">
 								<span>상태: ${product.state }</span>
 							</div>
-							<script> state(287, 19, 377, 7.5)</script>
+							<script> state(287, 19, 377, 7.5,"${product.state}")</script>
 						</a>
 						<c:if test="${i%j == j-1 }">
 							</div>
