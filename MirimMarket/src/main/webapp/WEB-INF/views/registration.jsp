@@ -73,7 +73,6 @@
 				<input type="file" id="input_file" name="image" style="display:none"  accept="image/*" onchange="addIMG(event);" multiple/> 
 				<div class="inputIMG"></div>
 			</div>
-			<%=request.getRealPath("/") %>
 			<!-- 가격 입력 -->
 			<div id="regisFONT1" style="top: 625px;">가격</div>
 			<div id="regisFONT2" style="top: 635px; left: 165px;">*</div>

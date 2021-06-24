@@ -404,7 +404,7 @@
 	<div id="productFONT2">재고 : ${product.amount }개 남음</div>
 	<div id="productFONT2" style="top:455px">상태 : ${product.state }</div>
 	<!-- 상품 상태 시각화(점들로 표현) -->
-	<script>state(1075, 38, 457, 15)</script>
+	<script>state(1100, 38, 457, 15)</script>
 	<div id="productFONT2" style="left: 1385px; top: 512px; font-size: 42px;">20,000<span style="font-size:26px;">원</span></div>
 	<!-- 채팅하기 -->
 	<a href="#" class="productCHAT">
