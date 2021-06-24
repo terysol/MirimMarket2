@@ -13,6 +13,7 @@
 		<link href="static/css/mypageCSS.css" rel="stylesheet" type="text/css" />
 
 		<script type="text/javascript" src="static/js/mypageJS.js"></script>
+		
 	</head>
 	<body>
 		<jsp:include page="menubar.jsp"></jsp:include>
