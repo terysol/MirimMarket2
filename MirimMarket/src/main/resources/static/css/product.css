@@ -13,6 +13,10 @@
     height: 320px;
     overflow: hidden;
 }
+#productIMGpos img{
+    width: 378px;
+    height: 320px;
+}
 #productName {
     top: 332px;
     position: absolute;

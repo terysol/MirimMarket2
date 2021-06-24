@@ -18,7 +18,8 @@
   	<result property="userID" column="userID"/>
   	<result property="userName" column="userName"/>
   	<result property="title" column="title"/>
-  	<result property="category" column="category"/>
+  	<result property="cate1" column="cate1"/>
+  	<result property="cate2" column="cate2"/>
   	<result property="gdsThumbImg" column="gdsThumbImg"/>
   	<result property="gdsImg" column="gdsImg"/>
   	<result property="price" column="price"/>
@@ -27,7 +28,7 @@
   	<result property="explanation" column="explanation"/>
   	<result property="click" column="click"/>
   	<result property="date" column="date"/>
-  	<collection property="memberDTO" resultMap="memberMap"></collection>
+  	<collection property="member" resultMap="memberMap"></collection>
   </resultMap>
   
   
