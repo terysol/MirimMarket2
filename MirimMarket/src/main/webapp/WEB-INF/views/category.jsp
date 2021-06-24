@@ -14,7 +14,32 @@
 		<link rel="icon" type="image/png" href="static/img/logo.png"/>
 		
 		<script type="text/javascript" src="static/js/product.js"></script>
-
+		<script>
+			function state(left, leftDIS, top, size){
+			    const maxState = 5;
+			    var state = 0;
+			    var state1='<c:out value="${product.state }"/>';
+			    if(state1 === "최상") state=5;
+			    else if (state1 === "상") state=4;
+			    else if(state1 === "중") state=3;
+			    else if(state1 === "하") state=2;
+			    else if(state1 === "최하") state=1;
+			    for(var i=1; i<=state; i++){
+			        document.write(
+			            '<svg class="productStateFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+			        );
+			        left += leftDIS;
+			    }
+		
+			    for(var i=state; i<maxState; i++){
+			        document.write(
+			            '<svg class="productStateNoneFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateNoneFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
+			        );
+			        left += leftDIS;
+			    }
+			}
+		</script>
+		
 		<link href="static/css/top.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/selectbox.css" rel="stylesheet" type="text/css" />
 		<link href="static/css/product.css" rel="stylesheet" type="text/css" />
@@ -163,7 +188,7 @@
 						<c:if test="${i%j == 0 }" >
 							<div id="allproductROW" style="top:${i/j*445}px">
 						</c:if>
-						<a id="product" href="BuyProduct?productID=${product.productID }">
+						<a id="product" href="product?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 							</div>
