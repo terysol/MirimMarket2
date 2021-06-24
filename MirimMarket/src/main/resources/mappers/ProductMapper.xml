@@ -9,27 +9,19 @@
   </select>
   
   <select id="getProductList1"  parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
-  	select * from Product1 where cate1 = '#{cate1}'
+  	select * from Product1 where cate1 = #{cate1}
   </select>
   
   <select id="getProductList2" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
-  		select * from Product1 where cate1 = '#{cate1}' AND cate2 = '#{cate2}
+  		select * from Product1 where cate1 = #{cate1} AND cate2 = #{cate2}
   </select>
   
   <select id="getProduct" parameterType="int" resultType="kr.hs.mirimmarket.dto.ProductDTO">
   	select * from Product1 where productID = #{productID}
   </select>
   
-  <select id="getProductCate1" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
-  	select * from Product1 where cate1 = #{cate1}
-  </select>
-  
-   <select id="getProductCate2" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
-  	select * from Product1 where cate2 = #{cate2}
-  </select>
-  
   <select id="getRegister" parameterType="String" resultType="kr.hs.mirimmarket.dto.ProductDTO">
-  	select * from Product1 where userID = #{userID}
+  	select * from Product1 where userID = #{userID}	
   </select>
   
   <update id="updateClick" parameterType="int">

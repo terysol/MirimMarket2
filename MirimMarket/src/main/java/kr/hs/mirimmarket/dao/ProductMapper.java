@@ -25,7 +25,7 @@ public interface ProductMapper {
 	public List<ProductDTO> getProductList2(@Param("cate1") String cate1, @Param("cate2") String cate2);
 	
 	// seq 기준으로 상품 목록 가져오기
-	public  ProductDTO getProduct(@Param("productID") int productID);
+	public ProductDTO getProduct(@Param("productID") int productID);
 	
 	public ProductDTO getRegister(String userID);
 	

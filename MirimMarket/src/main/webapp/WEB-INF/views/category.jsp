@@ -138,12 +138,11 @@
 				<span>카테고리</span>
 			</div>
 			
-			<c:forEach items="${productlist }" var="product">
-				<!-- [카테고리] 셀렉트 박스 -->
-				<!-- 링크 추가!! -->
-				<div id="categorySECTION">
-					<span>${product.cate1 } > ${product.cate2}</span>
-				</div>
+			<div id="categorySECTION">
+					<span>${cateName}</span>
+			</div>
+			
+				
 	
 				<!-- [정렬순] 셀렉트 박스 -->
 				<select class="selectbox" style="top: 287px;">
@@ -155,11 +154,15 @@
 				</svg>
 				
 				
+				<!-- [카테고리] 셀렉트 박스 -->
+				<!-- 링크 추가!! -->
 				<!-- 상품 나열 -->
 				
 				<div id="allproduct">
 					<div id="allproductROW">
-						<a id="product" href="product?productID=${product.proudctID }">
+					
+					<c:forEach items="${productlist}" var="product">
+						<a id="product" href="BuyProduct?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 							</div>
@@ -177,23 +180,8 @@
 							</div>
 							<script> state(287, 19, 377, 7.5)</script>
 						</a>
-						<a id="product" href="static/page4/productpage.html">
-							<div id="productIMGpos">
-								<img src="static/img/puppy.jpg" onerror="this.src = 'static/img/noimage.PNG'"/>
-							</div>
-							<div id="productName">
-								<span>교복 마이</span>
-							</div>
-							<div id="productPrice">
-								<span>20,000</span><span style="font-size:14px;">원</span>
-							</div>
-							<div id="productCategory">
-								<span>옷>교복</span>
-							</div>
-							<div id="productState">
-								<span>상태: 상</span>
-							</div>
-							<script> state(287, 19, 377, 7.5)</script>
+						</c:forEach>
+						<!-- 
 						</a>
 						<a id="product" href="static/page4/productpage.html">
 							<div id="productIMGpos">
@@ -381,9 +369,9 @@
 							</div>
 							<script> state(287, 19, 377, 7.5)</script>
 						</a>
+						 -->
 					</div>
 				</div>
-			</c:forEach>
 			
 			<!-- 페이지 번호 -->
 			<div id="selectPAGE">

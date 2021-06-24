@@ -62,11 +62,11 @@ public class GetProductController {
    }
 	
 	@GetMapping(value="/BuyProduct")
-	public ModelAndView buyProduct(@RequestParam("seq") String seq1) {	
+	public ModelAndView buyProduct(@RequestParam("productID") String seq1) {	
 		ModelAndView model = new ModelAndView();
-		int seq=Integer.parseInt(seq1);
-		service.updateClick(seq);		// 조회수 올리기
-		ProductDTO product = service.getProduct(seq);
+		int productID=Integer.parseInt(seq1);
+		service.updateClick(productID);		// 조회수 올리기
+		ProductDTO product = service.getProduct(productID);
 		model.addObject("product",product);
 		model.setViewName("BuyProduct");
 		return model;
