@@ -227,7 +227,7 @@
 						<c:if test="${i%j == 0 }" >
 							<li class="slideitem">
 						</c:if>
-						<a id="product" href="BuyProduct?productID=${product.productID }">
+						<a id="product" href="product?productID=${product.productID }">
 							<div id="productIMGpos">
 								<img src="static/img${product.gdsImg }" onerror="this.src = 'static/img/noimage.PNG'"/>
 							</div>
