@@ -84,7 +84,7 @@ public class LoginController {
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:/main");
+		mav.setViewName("redirect:/");
 		return mav;
 	}
 	
@@ -94,7 +94,7 @@ public class LoginController {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		ModelAndView model =new ModelAndView();
-		model.setViewName("redirect:/main");
+		model.setViewName("redirect:/");
 		return model;
 	}
 	

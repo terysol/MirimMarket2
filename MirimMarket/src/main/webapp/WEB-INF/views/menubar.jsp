@@ -16,7 +16,6 @@
 				var nameTxt = document.querySelector('#name');
 				// gauth.isSignedIn.get()   -> 로그인이 되어 있는지 아닌지 확인 
 				if (gauth.isSignedIn.get()) { // 로그인이 되어 있다면
-					console.log('logined');
 					
 					var profile = gauth.currentUser.get().getBasicProfile(); // 현제 로그인 사용자 정보를 가져오기
 					nameTxt.innerHTML = profile.getName().split("_")[1];
@@ -70,7 +69,7 @@
 				              }
 				          };
 				          xhr.send("at=" + userInfo_at + "&it=" + userInfo_it );
-				          location.href="./main";
+				          location.href="./";
 				      }else{
 						gauth.signOut().then(alert("미림학교 계정만 가능합니다. !!"));
 					  }

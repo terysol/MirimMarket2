@@ -11,34 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>미림마켓</title>
 		
-		
-		
-		 <script>
-	         function state(left, leftDIS, top, size, state1){
-	             const maxState = 5;
-	             var state = 0;
-	             if(state1 === "최상") state=5;
-	             else if (state1 === "상") state=4;
-	             else if(state1 === "중") state=3;
-	             else if(state1 === "하") state=2;
-	             else if(state1 === "최하") state=1;
-	             
-	             for(var i=1; i<=state; i++){
-	                 document.write(
-	                     '<svg class="productStateFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
-	                 );
-	                 left += leftDIS;
-	             }
-	      
-	             for(var i=state; i<maxState; i++){
-	                 document.write(
-	                     '<svg class="productStateNoneFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateNoneFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
-	                 );
-	                 left += leftDIS;
-	             }
-	         }
-      </script>
-		
 		 <script>
 	         function state(left, leftDIS, top, size, state1){
 	             const maxState = 5;
@@ -428,7 +400,7 @@
 				</div>	
 			</div>					
 
-			<div id="viewmoreFONT" onclick="location.href='#'"style="top: 4066px;">
+			<div id="viewmoreFONT" onclick="location.href='./category?cate1=의류'"style="top: 4066px;">
 				<span>더보기 ></span>
 			</div>
 			 
