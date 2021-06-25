@@ -55,6 +55,14 @@
 	top: 40px;
 	transform: matrix(1,0,0,1,0,0);
 }
+#topLogInOut{
+	position: absolute;
+	left: 1619px;
+	top: 75px;
+	width: 70px;
+	font-size: 15px;
+	text-align: center;
+}
 #topADD {
 	cursor: pointer;
 	position: absolute;
