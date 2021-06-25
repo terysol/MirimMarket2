@@ -15,15 +15,15 @@
       
       <script type="text/javascript" src="static/js/product.js"></script>
       <script>
-         function state(left, leftDIS, top, size){
+         function state(left, leftDIS, top, size, state1){
              const maxState = 5;
              var state = 0;
-             var state1='<c:out value="${product.state }"/>';
              if(state1 === "최상") state=5;
              else if (state1 === "상") state=4;
              else if(state1 === "중") state=3;
              else if(state1 === "하") state=2;
              else if(state1 === "최하") state=1;
+             
              for(var i=1; i<=state; i++){
                  document.write(
                      '<svg class="productStateFill" style="left: '+ left + 'px; top: ' + top + 'px;"> <ellipse id="productStateFill" rx="' + size + '" ry="' + size + '" cx="' + size + '" cy="' + size + '"/> </svg>'
@@ -221,7 +221,7 @@
                
             <div class="categorySET">
             	<div id="allproduct">
-               		<c:forEach items="${productlist}" var="product">
+               		<c:forEach items="${productlist}" var="product" varStatus = "ProductList">
                   		<c:if test="${i%j == 0 }" >
                    			<div id="allproductROW" style="top:${i/j*445}px">
                   		</c:if>
@@ -238,10 +238,11 @@
     			        	         <div id="productCategory">
         	    		    	        <span>${product.cate1 } > ${product.cate2}</span>
 	        	        		     </div>
+	        	        		     
 		    	        	         <div id="productState">
         			        	        <span>상태: ${product.state }</span>
             			        	 </div>
-                	    		 	<script> state(287, 19, 377, 7.5)</script>
+                	    		 	<script> state(287, 19, 377, 7.5, "${product.state}")</script>
 		                  		</a>
         	           <c:if test="${i%j == j-1 }">
         	           		</div>
